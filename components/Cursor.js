@@ -13,14 +13,14 @@ export default function Cursor () {
     const [hidden, setHidden] = useState(false);
     const [linkHovered, setLinkHovered] = useState(false);
 
-    //remove custom cursor if mobile
-    if (typeof navigator !== "undefined" && isMobile()) return null;
-
     useEffect(() => {
         addEventListeners();
         handleLinkHoverEvents();
         return () => removeEventListeners();
     }, []);
+
+    //remove custom cursor if mobile
+    if (typeof navigator !== "undefined" && isMobile()) return null;
 
     const addEventListeners = () => {
         document.addEventListener("mousemove", onMouseMove);
