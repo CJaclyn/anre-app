@@ -18,7 +18,7 @@
   position: relative;
   text-align: center;
   padding: 0 1.5rem;
-  background: #BB3A3A;
+  background: black;
   /*background: url('/header.jpg');
         background-position: center;
         background-repeat: no-repeat;
@@ -131,6 +131,7 @@
 
 .page-home .about h1 {
   position: relative;
+  margin-top: 1rem;
 }
 
 .page-home .about-container {
@@ -189,6 +190,10 @@
 
 .page-home .testimonials .line {
   margin: auto;
+}
+
+.page-home .testimonials h1 {
+  margin-top: 1rem;
 }
 
 .page-home .testimonial-imgs {
@@ -279,6 +284,9 @@
   .page-home .about .line {
     margin: initial;
   }
+  .page-home .about h1 {
+    margin-top: 0;
+  }
   .page-home .about-container {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
@@ -313,6 +321,9 @@
         -ms-flex-direction: row;
             flex-direction: row;
     height: 100vh;
+  }
+  .page-home .testimonials h1 {
+    margin-top: 0;
   }
   .page-home .testimonial-container {
     -webkit-box-flex: 50%;
