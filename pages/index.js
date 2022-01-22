@@ -25,7 +25,8 @@ export default function Home() {
                //layout="fill"
               />
             </a>
-            <a href="/properties" className="button">
+            <Link href="/properties">
+            <a className="button">
               Properties
               <img
                 src="/r-arrow.svg" 
@@ -34,6 +35,7 @@ export default function Home() {
                 //layout="fill"
               />
             </a>
+            </Link>
         </div>
       </header>
 

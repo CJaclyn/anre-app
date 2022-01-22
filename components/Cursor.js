@@ -13,8 +13,8 @@ export default function Cursor () {
 
     const [position, setPosition] = useState({ mouseX: 0, mouseY: 0 });
     const [clicked, setClicked] = useState(false);
-    const [linkHovered, setLinkHovered] = useState(false);
     const [hidden, setHidden] = useState(false);
+    const [linkHovered, setLinkHovered] = useState(false);
 
     useEffect(() => {
         addEventListeners();
