@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }) {
     <>
     <Nav />
     <div className="main-content">
-      <Cursor/>
+      {/*<Cursor/>*/}
       <Component {...pageProps} />
     </div>
     <Footer />
