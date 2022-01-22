@@ -8,13 +8,13 @@ const isMobile = () => {
 
 
 export default function Cursor () {
-    //remove custom cursor if mobile
-    if (typeof navigator !== "undefined" && isMobile()) return null;
-
     const [position, setPosition] = useState({ mouseX: 0, mouseY: 0 });
     const [clicked, setClicked] = useState(false);
     const [hidden, setHidden] = useState(false);
     const [linkHovered, setLinkHovered] = useState(false);
+
+    //remove custom cursor if mobile
+    if (typeof navigator !== "undefined" && isMobile()) return null;
 
     useEffect(() => {
         addEventListeners();
