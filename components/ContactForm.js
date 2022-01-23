@@ -1,6 +1,6 @@
 export default function ContactForm () {
     return (
-        <aside className="contact-form">
+        <aside className="contact-form" data-aos="fade-up">
             <div className="contact-form-top">
                 <h2>Interested in this Property?</h2>
                 <p>Request additional information or schedule a tour.</p>

@@ -13,9 +13,9 @@ export default function Home() {
       </Head>
 
       <header>
-        <h1>Andy Nguyen Real Estate</h1>
-        <h2>Real estate agent in Minnesota</h2>
-        <div className="header-buttons">
+        <h1 data-aos="fade-in">Andy Nguyen Real Estate</h1>
+        <h2 data-aos="fade-in">Real estate agent in Minnesota</h2>
+        <div className="header-buttons" data-aos="fade-in">
             <a href="" className="button">
               Get in Contact
               <img
@@ -42,7 +42,7 @@ export default function Home() {
       <main>
         <section className="about" id="about">
           <div className="about-container">
-            <div className="about-portrait">
+            <div className="about-portrait" data-aos="fade-left">
                 <Image 
                   src="/portrait.png"
                   alt="portrait of Andy Nguyen" 
@@ -50,7 +50,7 @@ export default function Home() {
                   layout="fill"
                 />
             </div>
-            <div className="about-desc" data-aos="slide-right">
+            <div className="about-desc" data-aos="fade-right">
                 <div className="header">
                   <h1>Meet Andy</h1>
                 </div>
@@ -80,7 +80,7 @@ export default function Home() {
               objectFit="cover"
             />
           </div>
-          <div className="testimonial-container">
+          <div className="testimonial-container" data-aos="fade-up">
           <div className="header">
             <h1>What Clients Have To Say</h1>
             <p className="label">Testimonials</p>
@@ -98,7 +98,7 @@ export default function Home() {
         </section>
 
         <section className="contact-section">
-          <section className="contact-section-container">
+          <section className="contact-section-container" data-aos="fade-in">
             <div className="header">
               <h1>Find Your New Home</h1>
             </div>

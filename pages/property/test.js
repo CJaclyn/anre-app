@@ -14,7 +14,7 @@ export default function Property () {
                 <div className="property-images">
                     <Image src="/house2.jpg" alt="house" layout="fill" />
                 </div>
-                <div className="main-container">
+                <div className="main-container" data-aos="fade-in">
                     <div className="property-information">
                         <div className="property-intro">
                             <p className="label">FOR SALE</p>

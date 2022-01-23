@@ -61,10 +61,10 @@ export default function Nav () {
                         <ActiveLink href="/properties" className="nav-link">
                             Properties
                         </ActiveLink>
-                        <ActiveLink href="/" className="nav-link">
+                        <ActiveLink href="/about" className="nav-link">
                             About
                         </ActiveLink>
-                        <ActiveLink href="/" className="nav-link">
+                        <ActiveLink href="/contact" className="nav-link">
                             Contact
                         </ActiveLink>
                     </div>

@@ -8,8 +8,20 @@ import "@fontsource/manrope"
 import Nav from '../Nav'
 import Footer from '../Footer'
 import Cursor from '../components/Cursor'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 function MyApp({ Component, pageProps }) {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      disable: 'mobile',
+      //once: true
+    })
+    AOS.refresh()
+  })
+  
   return (
     <>
     <Nav />
