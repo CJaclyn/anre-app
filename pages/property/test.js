@@ -27,11 +27,11 @@ export default function Property () {
                             </p>
                         </div>
                         <div className="property-facts">
-                            <h2>Facts and Features</h2>
+                            <h2>Property Details</h2>
                             <div className="facts">
                                 <div className="fact">
                                     <Icon icon="bi:house-door" />
-                                    <p>Single-family home</p>
+                                    <p>Single-family</p>
                                 </div>
                                 <div className="fact">
                                     <Icon icon="gis:square-pt" />
@@ -51,7 +51,7 @@ export default function Property () {
                                 </div>
                                 <div className="fact">
                                     <Icon icon="ic:outline-date-range" />
-                                    <p>built 2001</p>
+                                    <p>Built 2001</p>
                                 </div>
                             </div>
                         </div>

@@ -65,7 +65,6 @@ export default function Home() {
                 </Link>
             </div>
           </div>
-          <img className="divider" src="/divider2.svg"/>
         </section>
 
         <RecentListings />

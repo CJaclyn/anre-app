@@ -8,8 +8,20 @@ export default function Footer () {
         <footer>
             <div className="footer-top section">
                 <div className="logos sub-section">
-                    <img src="andy_nguyen_real_estate_logo.svg" alt="andy nguyen real estate logo" />
-                    <img src="realty-group-logo.png" alt="realty group logo" />
+                    <div className="footer-logo">
+                        <Image 
+                            src="/andy_nguyen_real_estate_logo.svg" 
+                            alt="andy nguyen real estate logo"
+                            layout="fill"
+                        />
+                    </div>
+                    <div className="footer-logo">
+                        <Image 
+                            src="/realty-group-logo.png" 
+                            alt="realty group logo"
+                            layout="fill"
+                        /> 
+                    </div>
                 </div>
                 <nav className="sitemap sub-section">
                     <h3>Sitemap</h3>

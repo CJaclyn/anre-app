@@ -3,6 +3,7 @@ import '../styles/Home.css';
 import '../styles/RecentListings.css'
 import '../styles/Properties.css'
 import '../styles/Property.css'
+import "@fontsource/manrope"
 import Nav from '../Nav'
 import Footer from '../Footer'
 import Cursor from '../components/Cursor'
