@@ -20,14 +20,6 @@ export default function Nav () {
         background: showMenu === true ? 'none' : 'white'
     }
 
-    const logoRed = {
-        display: showMenu === true ? 'none' : 'block'
-    }
-
-    const logoWhite = {
-        display: showMenu === true ? 'block' : 'none'
-    }
-
     const facebookStyle = {
         color: showMenu === true ? 'white' : '#BB3A3A'
     }
@@ -35,7 +27,7 @@ export default function Nav () {
     return (
         <nav className="main-nav">           
             <div className="nav-container" style={ navStyle }>
-                <div className="nav-logo" style={ logoRed }>
+                <div className="nav-logo">
                     <Link href="/">
                         <Image 
                             src="/andy_nguyen_real_estate_logo.svg" 
@@ -45,16 +37,6 @@ export default function Nav () {
                         />
                     </Link>
                 </div> 
-                <div className="nav-logo" style={ logoWhite } >
-                    <Link href="/">
-                        <Image 
-                            src="/andy_nguyen_real_estate_logo_white.svg" 
-                            alt="andy nguyen real estate"
-                            layout="fill"
-                            className="nav-logo white-logo"
-                        />
-                    </Link>
-                </div>
                 <div className="nav-right">
                     <div className="nav-links">
                         <ActiveLink href="/" className="nav-link">

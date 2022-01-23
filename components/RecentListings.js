@@ -51,7 +51,7 @@ export default function RecentListings () {
               </div>
             </div>  
           </div>
-          <Link href="/">
+          <Link href="/properties">
             <a className="button">All Properties</a>
           </Link>    
         </section>
