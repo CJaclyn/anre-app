@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import ActiveLink from './components/ActiveLink'
 import { Icon } from '@iconify/react'
@@ -6,7 +6,22 @@ import Image from 'next/image'
 import menuAlt3 from '@iconify/icons-heroicons-outline/menu-alt-3'
 
 export default function Nav () {
+    const [scrolled, setScrolled] = useState(false)
     const [showMenu, setShowMenu] = useState(false)
+
+    const handleScroll = () => {
+        const offset = window.pageYOffset;
+
+        if(offset > 100) {
+            setScrolled(true)
+        }else {
+            setScrolled(false)
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll)
+    }, [])
 
     const menuIconStyle = {
         color: showMenu === true ? 'white' : '#BB3A3A'
@@ -17,7 +32,8 @@ export default function Nav () {
     }
 
     const navStyle = {
-        background: showMenu === true ? 'none' : 'white'
+        background: showMenu === true ? 'none' : 'white',
+        position: scrolled === true ? 'fixed': 'relative'
     }
 
     const facebookStyle = {
