@@ -6,7 +6,7 @@ export default function Properties() {
     return (
         <div className="page-properties">
             <Head>
-                <title>Andy Nguyen Real Estate</title>
+                <title>Properties | Andy Nguyen Real Estate</title>
                 <meta name="description" content="Andy Nguyen real estate agent in Minnesota" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>

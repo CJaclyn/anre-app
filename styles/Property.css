@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&display=swap");
+.page-property {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.page-property main {
+  width: 100%;
+}
+
+.page-property h1 {
+  font-size: 1.5rem;
+}
+
+.page-property h2 {
+  margin: 0;
+}
+
+.page-property .property-images {
+  position: relative;
+  height: 50vh;
+}
+
+.page-property .property-images img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.page-property .property-information {
+  padding: 1rem 1.5rem 2rem 1.5rem;
+}
+
+.page-property .property-facts {
+  border: solid 1px #dbdbdb;
+  padding: 1rem 1rem 2rem 1rem;
+  margin-top: 2rem;
+}
+
+.page-property .property-facts h2 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.page-property .property-facts .iconify {
+  color: #BB3A3A;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+.page-property .property-facts .iconify, .page-property .property-facts p {
+  display: inline-block;
+}
+
+.page-property .property-facts p {
+  line-height: 20px;
+}
+
+.page-property .contact-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  border: solid 1px #dbdbdb;
+  border-bottom: none;
+  width: 100%;
+  padding: 4rem 1rem;
+}
+
+.page-property .contact-form h2 {
+  color: #BB3A3A;
+}
+
+.page-property .contact-form form {
+  width: 300px;
+}
+
+.page-property .contact-form input, .page-property .contact-form textarea {
+  border: solid 1px #dbdbdb;
+}
+
+.page-property .contact-form-top {
+  width: 300px;
+}
+
+@media only screen and (min-width: 500px) {
+  .page-property .facts {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .page-property .fact {
+    width: 215px;
+    margin-right: 1rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .page-property .contact-form form {
+    width: 400px;
+  }
+}
+
+@media only screen and (min-width: 850px) {
+  .page-property .property-facts, .page-property .property-intro {
+    width: 750px;
+  }
+}
+
+@media only screen and (min-width: 1080px) {
+  .page-property .main-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 2rem 0;
+  }
+  .page-property .contact-form {
+    width: 400px;
+    border: solid 1px #f6f6f6;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  }
+  .page-property .contact-form form {
+    width: 100%;
+  }
+  .page-property .property-information {
+    padding: 0;
+    margin-right: 2rem;
+    width: 600px;
+  }
+  .page-property .property-information .label {
+    margin-top: 0;
+  }
+  .page-property .property-facts, .page-property .property-intro {
+    width: auto;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .page-property .contact-form {
+    width: 400px;
+  }
+  .page-property .property-information {
+    width: 700px;
+    margin-right: 4rem;
+  }
+}
+
+@media only screen and (min-width: 1368px) {
+  .page-property h1 {
+    font-size: 2rem;
+  }
+  .page-property .contact-form {
+    width: 400px;
+  }
+  .page-property .property-information {
+    width: 800px;
+  }
+}
+/*# sourceMappingURL=Property.css.map */

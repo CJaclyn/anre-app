@@ -69,7 +69,7 @@ h1, h2, h3 {
   color: #2e2e2e;
 }
 
-p, a {
+p, a, label {
   font-size: 1.1rem;
   letter-spacing: .5px;
 }
@@ -96,6 +96,7 @@ a {
 .button {
   display: inline-block;
   background: #BB3A3A;
+  border: none;
   color: white;
   width: 215px;
   padding: .75rem 0;
@@ -103,6 +104,7 @@ a {
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-top: 2rem;
+  font-size: 1rem;
 }
 
 .basic-link {
@@ -131,6 +133,22 @@ a {
   color: #BB3A3A;
   margin: 1rem 0;
   letter-spacing: 2px;
+}
+
+label, input, textarea {
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+
+input, textarea {
+  font-size: 1.1rem;
+  font-family: "Manrope", sans-serif;
+}
+
+input {
+  margin-bottom: 1rem;
+  height: 2rem;
 }
 
 /******************************/
