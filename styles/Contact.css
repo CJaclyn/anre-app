@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&display=swap");
+.page-about main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.page-about .contact-left {
+  background-color: #d1d1ff;
+  height: 400px;
+  padding: 4rem 1.5rem;
+  background: url("/monke.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.page-about .contact-left h1, .page-about .contact-left p {
+  color: white;
+}
+
+.page-about .contact-left h1 {
+  margin-bottom: 1.5rem;
+}
+
+.page-about .contact-left p, .page-about .contact-left .iconify {
+  display: inline;
+}
+
+.page-about .contact-left .iconify {
+  font-size: 1.3rem;
+  margin-right: 1rem;
+}
+
+.page-about .contact-form-container {
+  padding: 4rem 1.5rem;
+}
+
+.page-about .label {
+  font-size: 1.25rem;
+}
+
+@media only screen and (min-width: 500px) {
+  .page-about .contact-form {
+    width: 400px;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .page-about main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    height: 800px;
+  }
+  .page-about .contact-left {
+    height: 100%;
+    width: 50%;
+  }
+  .page-about .contact-form-container {
+    width: 50%;
+  }
+  .page-about .contact-form-container input {
+    height: 2.5rem;
+  }
+}
+
+@media only screen and (min-width: 1368px) {
+  .page-about .contact-form {
+    width: 500px;
+  }
+}
+/*# sourceMappingURL=Contact.css.map */

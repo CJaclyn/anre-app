@@ -1,0 +1,77 @@
+@import 'variables';
+
+.page-about {
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact-left {
+        background-color: rgb(209, 209, 255);
+        height: 400px;
+        padding: $sectionPadding;
+        background: url('/monke.webp');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        h1, p {
+            color: white;
+        }
+
+        h1 {
+            margin-bottom: 1.5rem;
+        }
+
+        p, .iconify {
+            display: inline;
+        }
+
+        .iconify {
+            font-size: 1.3rem;
+            margin-right: 1rem;
+        }
+    }
+
+    .contact-form-container {
+        padding: $sectionPadding;       
+    }
+
+    .label {
+        font-size: 1.25rem;
+    }
+
+    @media only screen and (min-width: 500px) {
+        .contact-form {
+            width: 400px;
+            margin: 0 auto;
+        }
+    }
+
+    @media only screen and (min-width: 1024px) {
+        main {
+            display: flex;
+            flex-direction: row;
+            height: 800px;
+        }
+
+        .contact-left {
+            height: 100%;
+            width: 50%;
+        }
+
+        .contact-form-container {
+            width: 50%;
+
+            input {
+                height: 2.5rem;
+            }  
+        } 
+    }
+
+    @media only screen and (min-width: 1368px) {
+        .contact-form {
+            width: 500px;
+        }
+    }
+}

@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function RecentListings () {
     return (
-        <section className="recent-listings" data-aos="fade-up">
+        <section className="recent-listings" data-aos="fade-in">
           <h1>Recent Properties</h1>
           <div className="recent-listings-container house-1">
             <div className="recent-listing-container">

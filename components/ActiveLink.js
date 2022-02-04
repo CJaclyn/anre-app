@@ -1,9 +1,9 @@
 import { useRouter } from 'next/router'
 
-export default function ActiveLink ({ children, href, className }) {
+export default function ActiveLink ({ children, href, className}) {
     const router = useRouter()
-    const style = {
-        background: router.asPath === href ? '#BB3A3A' : '',
+    const highlight = {
+        border: router.asPath === href ? 'white solid 1px' : '',
         color: router.asPath === href ? 'white' : '#474747',
     }
 
@@ -13,7 +13,7 @@ export default function ActiveLink ({ children, href, className }) {
     }
 
     return (
-        <a href={ href } onClick={ handleClick } style={ style } className={ className }>
+        <a href={ href } onClick={ handleClick } style={ highlight } className={ className }>
             { children }
         </a>
     )

@@ -14,7 +14,7 @@ export default function Property () {
                 <div className="property-images">
                     <Image src="/house2.jpg" alt="house" layout="fill" />
                 </div>
-                <div className="main-container" data-aos="fade-in">
+                <div className="main-container">
                     <div className="property-information">
                         <div className="property-intro">
                             <p className="label">FOR SALE</p>
@@ -56,7 +56,13 @@ export default function Property () {
                             </div>
                         </div>
                     </div>
-                    <ContactForm />
+                    <aside className="contact-form" data-aos="fade-up">
+                        <div className="contact-form-top">
+                            <h2>Interested in this Property?</h2>
+                            <p>Request additional information or schedule a tour.</p>
+                        </div>
+                        <ContactForm />
+                    </aside>
                 </div>
             </main>
         </div>

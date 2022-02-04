@@ -65,7 +65,7 @@ h1 {
 
 h1, h2, h3 {
   font-weight: 500;
-  color: #2e2e2e;
+  color: #474747;
 }
 
 p, a, label {
@@ -106,6 +106,10 @@ a {
   font-size: 1rem;
 }
 
+button {
+  cursor: pointer;
+}
+
 .basic-link {
   position: relative;
   color: #BB3A3A;
@@ -131,7 +135,7 @@ a {
   font-weight: 500;
   color: #BB3A3A;
   margin: 1rem 0;
-  letter-spacing: 2px;
+  letter-spacing: .5px;
 }
 
 label, input, textarea {
@@ -143,6 +147,7 @@ label, input, textarea {
 input, textarea {
   font-size: 1.1rem;
   font-family: "Manrope", sans-serif;
+  border: solid 1px #dbdbdb;
 }
 
 input {

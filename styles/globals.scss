@@ -56,7 +56,7 @@ h1 {
 
 h1, h2,h3 {
   font-weight: 500;
-  color: $headerColor;
+  color: $fontColor;
 }
 
 p, a, label {
@@ -96,6 +96,10 @@ a {
   font-size: 1rem;
 }
 
+button {
+  cursor: pointer;
+}
+
 .basic-link {
   position: relative;
   color: $primaryColor;
@@ -121,7 +125,7 @@ a {
   font-weight: 500;
   color: $primaryColor;
   margin: 1rem 0;
-  letter-spacing: 2px;
+  letter-spacing: .5px;
 }
 
 label, input, textarea {
@@ -133,6 +137,7 @@ label, input, textarea {
 input, textarea {
   font-size: 1.1rem;
   font-family: $primaryFont;
+  border: solid 1px rgb(219, 219, 219);
 }
 
 input {

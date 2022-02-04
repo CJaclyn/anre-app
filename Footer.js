@@ -27,14 +27,14 @@ export default function Footer () {
                     <h3>Sitemap</h3>
                     <Link href="/"><a>Home</a></Link>
                     <Link href="/properties"><a>Properties</a></Link>
-                    <Link href="/"><a>About</a></Link>
-                    <Link href="/"><a>Contact</a></Link>
+                    <Link href="/about"><a>About</a></Link>
+                    <Link href="/contact"><a>Contact</a></Link>
                 </nav>
                 <div className="contact-info sub-section">
                     <h3>Contact</h3>
                     <p>Andy Nguyen Real Estate Inc.</p>
                     <p><a href="tel:+1123456789">(123) 456-789</a></p>
-                    <p>email@email.com</p>
+                    <p><a href = "mailto: andynguyenrealestate@gmail.com">email@email.com</a></p>
                 </div>
             </div>
             <div className="footer-bottom section">

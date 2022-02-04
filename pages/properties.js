@@ -15,7 +15,7 @@ export default function Properties() {
             <header>
                 <h1>Properties</h1>
             </header>
-            <main data-aos="fade-in">
+            <main>
                 <Link href="/property/test">
                     <a className="card">
                         <div className="property-card">

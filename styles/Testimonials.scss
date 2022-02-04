@@ -1,0 +1,143 @@
+    @import 'variables';
+
+    //TESTIMONIALS SECTION
+    .testimonials {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
+        min-height: auto;
+        position: relative;
+        background: $secondaryColor;
+        overflow: hidden;
+
+        .line {
+            margin: auto;
+        }
+
+        .header {
+            padding: 0 1.5rem;
+        }
+
+        .slick-slider {
+            width: 100vw;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+    
+        .slick-dots {
+            width: max-content;
+            margin: 0 auto;
+            position: relative;
+            margin-top: -1rem;
+        }
+
+        .slick-dots li.slick-active button::before {
+            color: $primaryColor;
+        }
+    }
+
+    .slide-container {
+        width: 100%;
+        overflow: hidden;
+        height: 500px;
+    }
+
+    .slide-track {
+        height: calc(100% * 12);
+        width: 100%;
+        animation: carousel 50s linear infinite;
+    }
+
+    .slide-img {
+        position: relative;
+        width: 100%;
+        height: 500px;
+
+        img {
+            object-fit: cover;
+        }
+    }
+
+    @keyframes carousel {
+        100% {
+            transform: translateY(calc(-100% / 2))
+        }
+    }
+
+    .testimonial-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+        padding: 1.5rem;
+        padding-bottom: 4rem;
+    }
+
+    .customer-testimonial {
+        font-size: .9rem;
+    }
+
+    .customer-name {
+        font-weight: 500;
+        font-size: 1rem;
+    }
+
+    @media only screen and (min-width: 500px) {
+        .testimonials {
+            .slick-slider {
+                width: 450px;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 600px) {
+        .testimonials {
+            .slick-slider {
+                width: 550px;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 768px) {
+        .testimonials {
+            .slick-slider {
+                width: 650px;
+            }
+        }
+
+        .customer-testimonial {
+            font-size: 1rem;
+        }
+    
+        .customer-name {
+            font-size: 1.1rem;
+        }
+    }
+
+    @media only screen and (min-width: 1368px) {
+        .testimonials {
+            flex-direction: row;
+            height: 100vh;
+        }
+
+        .testimonial {
+            margin: 0 auto 0 auto;
+        }
+
+        .testimonial-container {
+            flex: 50%;
+        }
+
+        .slide-container {
+            height: 100%;
+            width: 50%;
+        }
+
+        .slide-img {
+            width: 100%;
+            height: 100vh;
+        }
+    }
+    

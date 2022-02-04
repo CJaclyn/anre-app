@@ -3,6 +3,7 @@
 /********* NAVIGATION *********/
 /******************************/
 .main-nav {
+  display: none;
   position: relative;
   height: 100%;
   z-index: 9999;
@@ -10,6 +11,9 @@
 
 .nav-links {
   display: none;
+}
+
+.nav-link {
   color: #474747;
 }
 
@@ -30,22 +34,32 @@
   width: 100%;
   height: 75px;
   padding: 2.5rem 1.5rem;
-  z-index: 99999;
-  -webkit-box-shadow: 0 2px 5px 0 rgba(122, 122, 122, 0.16);
-          box-shadow: 0 2px 5px 0 rgba(122, 122, 122, 0.16);
-  background: white;
+  z-index: 9999;
+}
+
+.anre-logo, .nav-logo {
+  cursor: pointer;
+}
+
+.anre-logo svg {
+  width: 100px;
 }
 
 .nav-logo {
   position: relative;
-  width: 100px;
-  height: 75px;
-  cursor: pointer;
+  width: 150px;
+  height: 25px;
 }
 
 .nav-logo img {
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+svg {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 
 .nav-right {
@@ -67,28 +81,34 @@
   font-size: 1.5rem;
 }
 
-.nav-menu-icon {
+.mobile-nav-icon {
   cursor: pointer;
   top: 1rem;
   right: 1rem;
   margin-right: 0;
-  width: 45px;
-  height: 45px;
+  font-size: 2.5rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.exit-icon {
+  font-size: 3rem;
 }
 
 .mobile-nav {
   position: fixed;
   z-index: 99;
-  top: 0;
-  left: 100%;
+  bottom: 100%;
   width: 100%;
   height: 100%;
-  padding: 6rem 2rem 0 2rem;
+  padding: 1rem 1.5rem;
   background: #BB3A3A;
   -webkit-transition-timing-function: ease-in-out;
           transition-timing-function: ease-in-out;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  z-index: 99999;
 }
 
 .mobile-nav-items {
@@ -103,11 +123,29 @@
 }
 
 .mobile-nav-items a {
-  font-size: 3rem;
+  font-size: 2.75rem;
+  margin-bottom: .5rem;
+}
+
+.mobile-top {
+  text-align: right;
+}
+
+.mobile-bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media only screen and (min-width: 768px) {
-  .nav-menu-icon, .mobile-nav {
+  .mobile-nav-icon, .mobile-nav {
     display: none;
   }
   .nav-container {
