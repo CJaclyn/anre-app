@@ -7,10 +7,9 @@ export default function ImageSlider({ data }) {
             <div className="slide-track">
             {data.map((slide, index) => {
                 return (
-                    <div className="slide-img">
+                    <div className="slide-img" key={ index }>
                         <Image 
                             src={ slide }
-                            key={ index }
                             layout="fill"
                             objectFit="cover"
                             alt={`client ${index + 1}`}

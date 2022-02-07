@@ -35,10 +35,9 @@ export default function Home() {
           <Slider {...settings}>
           {data.map((slide, index) => {
           return (
-              <div className="header-img">
+              <div className="header-img" key={ index }>
                   <Image 
                       src={ slide }
-                      key={ index }
                       layout="fill"
                       objectFit="cover"
                       alt={`house ${index + 1}`}

@@ -23,7 +23,7 @@ export default function Contact () {
                     <div className="contact-form">
                         <p className="label">Get in touch</p>
                         <h1>Contact</h1>
-                        <p>Send me a message and I'll get back to you as soon as possible.</p>
+                        <p>Send me a message and I&apos;ll get back to you as soon as possible.</p>
                         <ContactForm />
                     </div>
                 </div>
