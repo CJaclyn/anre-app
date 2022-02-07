@@ -87,13 +87,19 @@ a {
   background: $primaryColor;
   border: none;
   color: white;
-  width: 215px;
+  width: 200px;
   padding: .75rem 0;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-top: 2rem;
   font-size: 1rem;
+  transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  font-weight: 500;
+
+  &:hover {
+    background: #ce0000;
+  }
 }
 
 button {
@@ -101,18 +107,34 @@ button {
 }
 
 .basic-link {
-  position: relative;
+  display: inline-block;
   color: $primaryColor;
-  font-weight: 500;
+  border: solid 1px $primaryColor;
+  width: 175px;
+  text-align: center;
+  padding: .75rem 0;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
 
-  &::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      margin: 0 .5rem;
-      height: 1px;
-      width: 50px;
-      background: $primaryColor;
+.arrow-button {
+  background: none;
+  border: solid 1px white;
+
+  img {
+    margin-left: .75rem;
+    width: 23px;
+    height: auto;
+    transition: .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  &:hover > img {
+      margin-left: 1.25rem;
+  }
+
+  &:hover {
+    background: none;
   }
 }
 

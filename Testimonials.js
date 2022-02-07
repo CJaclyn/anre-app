@@ -12,13 +12,13 @@ export default function Testimonials() {
         autoplaySpeed: 5000,
         cssEase: "ease-in-out",
         arrows: false, 
-        pauseOnHover: false,
+        pauseOnHover: true,
       };
 
     return (
         <section className="testimonials">
             <ImageSlider data={ ClientImages } />
-            <div className="testimonial-container" data-aos="fade-in">
+            <div className="testimonial-container" data-aos="fade-up">
                 <div className="header">
                     <h1>What Clients Have To Say</h1>
                     <p className="label">Testimonials</p>

@@ -19,11 +19,11 @@ export default function Contact () {
                         <p><a href = "mailto: andynguyenrealestate@gmail.com">email@email.com</a></p>
                     </div>
                 </div>
-                <div className="contact-form-container" data-aos="fade-in">
+                <div className="contact-form-container" data-aos="fade-up">
                     <div className="contact-form">
-                        <p className="label">Find Your New Home</p>
+                        <p className="label">Get in touch</p>
                         <h1>Contact</h1>
-                        <p>Send a message and I will quickly get in touch!</p>
+                        <p>Send me a message and I'll get back to you as soon as possible.</p>
                         <ContactForm />
                     </div>
                 </div>

@@ -8,6 +8,7 @@ import Slider from "react-slick";
 import { HeaderImages } from '../HeaderImages'
 
 export default function Home() {
+  const data = HeaderImages;
   const settings = {
     dots: false,
     infinite: true,
@@ -20,8 +21,6 @@ export default function Home() {
     arrows: false, 
     pauseOnHover: false,
   };
-
-  const data = HeaderImages;
 
   return (
     <div className="page-home">
@@ -100,19 +99,18 @@ export default function Home() {
             </a>
           </div>
         </nav>
-        <div className="header-main" data-aos="fade-in">
+        <div className="header-main" data-aos="fade-in" data-aos-duration="1750">
           <p className="welcome">Welcome to</p>
           <h1>Andy Nguyen Real Estate</h1>
-          <h2>Real Estate Agent in Minnesota</h2>
+          <h2>Real Estate Agent in Minnesota.</h2>
           <div className="header-buttons">
             <Link href="/contact">
               <a className="button">
-                Get in Contact
-                <img src="/r-arrow.svg" className="r-arrow" alt="right arrow" />
+                Contact
               </a>
             </Link>
             <Link href="/properties">
-              <a className="button">
+              <a className="button arrow-button">
                 Properties
                 <img src="/r-arrow.svg" className="r-arrow" alt="right arrow" />
               </a>
@@ -142,21 +140,18 @@ export default function Home() {
                   <h1>Meet Andy</h1>
                 </div>
                 <p className="label">Real Estate Agent</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                <p>
+                  Core values: People-first, professionalism, communication
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
                   Itaque voluptatem ipsum numquam et sit. Quisquam, quidem omnis? 
                   Asperiores veniam placeat nobis assumenda provident, quo, 
                   rerum officia eum soluta unde recusandae.
                 </p>
                 <Link href="/" >
-                  <a className="button">Read more</a>
+                  <a className="button">Learn more</a>
                 </Link>
             </div>
           </div>
-        </section>
-
-        <section className='banana'>
-          <h1>Satisfaction Guranteed</h1>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui, esse pariatur. Illum atque nam recusandae ullam nulla cupiditate possimus, numquam totam itaque, sequi, error corporis veritatis inventore vitae similique. Doloribus!</p>
         </section>
 
         <RecentListings />
@@ -165,11 +160,14 @@ export default function Home() {
         <section className="contact-section">
           <section className="contact-section-container" data-aos="fade-in">
             <div className="header">
-              <h1>Find Your New Home</h1>
+              <h1>Get in Touch</h1>
             </div>
-            <p>Get in touch.</p>
+            <p>Here to make your process of buying or selling a house as easy as possible.</p>
             <Link href="/contact">
-              <a className="button">Contact</a>
+              <a className="button arrow-button">
+                Contact
+                <img src="/r-arrow.svg" className="r-arrow" alt="right arrow" />
+              </a>
             </Link>
           </section>
         </section>

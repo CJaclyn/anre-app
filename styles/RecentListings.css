@@ -54,6 +54,7 @@
   position: relative;
   width: 100%;
   height: 200px;
+  z-index: -1;
 }
 
 .recent-listing-img img {
@@ -137,62 +138,25 @@
   .recent-listings h1 {
     margin-bottom: 4rem;
   }
-  .recent-listings-container {
-    position: relative;
+  .recent-listing-img {
+    width: 600px;
+    height: 450px;
+  }
+  .recent-listing-container {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
   }
-  .recent-listings-container::after {
-    content: '';
-    background: #c4c4c4;
-    height: 100%;
-    width: 1px;
-    position: absolute;
-    left: 50%;
-    top: -2rem;
-  }
-  .recent-listing-container {
-    width: 100%;
-  }
-  .house-1 .recent-listing-info {
-    margin-left: 6rem;
-  }
-  .house-1 .recent-listing-img {
-    margin-right: 4rem;
-  }
-  .house-1 .recent-listing-container {
-    position: relative;
-  }
-  .house-1 .recent-listing-container::before {
-    content: '';
-    background: #c4c4c4;
-    width: 3rem;
-    height: 1px;
-    position: absolute;
-    left: 50%;
-    bottom: 50%;
-  }
-  .house-2 .recent-listing-info {
-    margin-right: 6rem;
-  }
-  .house-2 .recent-listing-img {
-    margin-left: 4rem;
-  }
-  .house-2 .recent-listing-container {
-    position: relative;
-  }
-  .house-2 .recent-listing-container::before {
-    content: '';
-    background: #c4c4c4;
-    width: 3rem;
-    height: 1px;
-    position: absolute;
-    right: 50%;
-    bottom: 50%;
-  }
   .recent-listing-info {
     position: relative;
+    width: 450px;
   }
   .recent-listing-info::after {
     content: '';
@@ -206,6 +170,10 @@
   .recent-listings {
     padding-top: 8rem;
     padding-bottom: 8rem;
+  }
+  .recent-listing-img {
+    width: 700px;
+    height: 500px;
   }
 }
 /*# sourceMappingURL=RecentListings.css.map */

@@ -61,15 +61,16 @@
             justify-content: space-between;
             position: absolute;
             width: 100%;
-            padding: 0 6rem;
             top: 0;
             color: white;
+            padding: 1rem 1.5rem;
 
             a {
                 margin-right: 2rem;
                 text-transform: uppercase;
                 font-weight: 500;
                 letter-spacing: 2px;
+                display: none;
 
                 &:last-of-type {
                     margin: 0;
@@ -82,12 +83,13 @@
 
             svg {
                 width: 150px;
+                height: auto;
             }
         }
 
         .scroll-down {
             position: absolute;
-            bottom: 1.5rem;
+            bottom: 1rem;
 
             p {
                 margin: 0;
@@ -123,39 +125,36 @@
             font-weight: normal;
         }
 
+        .desc {
+            margin: auto;
+        }
+
         .button {
-            transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
-            background: $primaryColor;
-            border: solid 1px rgba(255, 255, 255, 0);
             display: block;
             position: relative;
             margin-top: 1rem;
 
             &:first-of-type {
                 margin-bottom: 1rem;
+                border: solid 1px transparent;
             }
         }
+    }
 
-        .button:hover {
-            background: none;
-            border: solid 1px white;
-        }
+    .header-main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-        .button:hover > img {
-            visibility: visible;
-            opacity: 1;
-            margin-left: 1rem;
-            width: 23px;
-            height: auto;
-        }
-
-        .button img {
-            transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
-            visibility: hidden;
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
+    @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+    }
+      
+    @keyframes blink-caret {
+        from, to { border-color: transparent; }
+        50% { border-color: white; }
     }
 
     .welcome {
@@ -265,6 +264,13 @@
         header {
             h1 {
                 font-size: 2.75rem;
+                overflow: hidden;
+                border-right: 2px solid white;
+                white-space: nowrap;
+                margin: 0 auto;
+                animation: 
+                  typing 3s steps(46, end),
+                  blink-caret .75s step-end infinite;
             }
 
             h2 {
@@ -274,6 +280,14 @@
             .button {
                 display: inline-block;
                 margin: 1.5rem 1rem;
+            }
+
+            nav {
+                padding: 3rem 4rem;
+
+                a {
+                    display: inline-block;
+                }
             }
         }
 
@@ -331,6 +345,10 @@
             h1 {
                 font-size: 3.25rem;
             }
+
+            nav {
+                padding: 4rem 6rem;
+            }
         }
 
         .welcome {
@@ -378,6 +396,10 @@
 
             h2 {
                 font-size: 1.5rem;
+            }
+
+            nav {
+                padding: 3rem 8rem;
             }
         }
     

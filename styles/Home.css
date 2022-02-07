@@ -90,9 +90,9 @@
           justify-content: space-between;
   position: absolute;
   width: 100%;
-  padding: 0 6rem;
   top: 0;
   color: white;
+  padding: 1rem 1.5rem;
 }
 
 .page-home header nav a {
@@ -100,6 +100,7 @@
   text-transform: uppercase;
   font-weight: 500;
   letter-spacing: 2px;
+  display: none;
 }
 
 .page-home header nav a:last-of-type {
@@ -112,11 +113,12 @@
 
 .page-home header .anre-logo svg {
   width: 150px;
+  height: auto;
 }
 
 .page-home header .scroll-down {
   position: absolute;
-  bottom: 1.5rem;
+  bottom: 1rem;
 }
 
 .page-home header .scroll-down p {
@@ -156,11 +158,11 @@
   font-weight: normal;
 }
 
+.page-home header .desc {
+  margin: auto;
+}
+
 .page-home header .button {
-  -webkit-transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
-  transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
-  background: #BB3A3A;
-  border: solid 1px rgba(255, 255, 255, 0);
   display: block;
   position: relative;
   margin-top: 1rem;
@@ -168,28 +170,56 @@
 
 .page-home header .button:first-of-type {
   margin-bottom: 1rem;
+  border: solid 1px transparent;
 }
 
-.page-home header .button:hover {
-  background: none;
-  border: solid 1px white;
+.page-home .header-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.page-home header .button:hover > img {
-  visibility: visible;
-  opacity: 1;
-  margin-left: 1rem;
-  width: 23px;
-  height: auto;
+@-webkit-keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
-.page-home header .button img {
-  -webkit-transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
-  transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
-  visibility: hidden;
-  opacity: 0;
-  width: 0;
-  height: 0;
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
 }
 
 .page-home .welcome {
@@ -323,6 +353,12 @@
 @media only screen and (min-width: 768px) {
   .page-home header h1 {
     font-size: 2.75rem;
+    overflow: hidden;
+    border-right: 2px solid white;
+    white-space: nowrap;
+    margin: 0 auto;
+    -webkit-animation: typing 3s steps(46, end), blink-caret 0.75s step-end infinite;
+            animation: typing 3s steps(46, end), blink-caret 0.75s step-end infinite;
   }
   .page-home header h2 {
     font-size: 1.25rem;
@@ -330,6 +366,12 @@
   .page-home header .button {
     display: inline-block;
     margin: 1.5rem 1rem;
+  }
+  .page-home header nav {
+    padding: 3rem 4rem;
+  }
+  .page-home header nav a {
+    display: inline-block;
   }
   .page-home .welcome {
     font-size: 1.5rem;
@@ -379,6 +421,9 @@
   .page-home header h1 {
     font-size: 3.25rem;
   }
+  .page-home header nav {
+    padding: 4rem 6rem;
+  }
   .page-home .welcome {
     font-size: 1.5rem;
   }
@@ -422,6 +467,9 @@
   }
   .page-home header h2 {
     font-size: 1.5rem;
+  }
+  .page-home header nav {
+    padding: 3rem 8rem;
   }
   .page-home .header-top {
     margin-bottom: 8rem;

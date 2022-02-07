@@ -97,13 +97,20 @@ a {
   background: #BB3A3A;
   border: none;
   color: white;
-  width: 215px;
+  width: 200px;
   padding: .75rem 0;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-top: 2rem;
   font-size: 1rem;
+  -webkit-transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  font-weight: 500;
+}
+
+.button:hover {
+  background: #ce0000;
 }
 
 button {
@@ -111,19 +118,36 @@ button {
 }
 
 .basic-link {
-  position: relative;
+  display: inline-block;
   color: #BB3A3A;
-  font-weight: 500;
+  border: solid 1px #BB3A3A;
+  width: 175px;
+  text-align: center;
+  padding: .75rem 0;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  text-transform: uppercase;
 }
 
-.basic-link::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  margin: 0 .5rem;
-  height: 1px;
-  width: 50px;
-  background: #BB3A3A;
+.arrow-button {
+  background: none;
+  border: solid 1px white;
+}
+
+.arrow-button img {
+  margin-left: .75rem;
+  width: 23px;
+  height: auto;
+  -webkit-transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.arrow-button:hover > img {
+  margin-left: 1.25rem;
+}
+
+.arrow-button:hover {
+  background: none;
 }
 
 .header {

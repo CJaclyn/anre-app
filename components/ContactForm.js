@@ -8,8 +8,8 @@ export default function ContactForm () {
             <label htmlFor="">Phone</label>
             <input type="text" />
             <label htmlFor="">Message</label>
-            <textarea name="" id="" cols="30" rows="5"></textarea>
-            <button className="button">Contact</button>
+            <textarea name="" id="" cols="30" rows="5" />
+            <button className="button">Send</button>
         </form>
     )
 }
