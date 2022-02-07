@@ -13,7 +13,7 @@
   background-color: #d1d1ff;
   height: 400px;
   padding: 4rem 1.5rem;
-  background: url("/monke.webp");
+  background: url("/monke.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -37,7 +37,7 @@
 }
 
 .page-about .contact-form-container {
-  padding: 4rem 1.5rem;
+  padding: 2rem 1.5rem;
 }
 
 .page-about .label {
@@ -66,17 +66,18 @@
     height: 100%;
     width: 50%;
   }
-  .page-about .contact-form-container {
-    width: 50%;
-  }
-  .page-about .contact-form-container input {
-    height: 2.5rem;
-  }
 }
 
 @media only screen and (min-width: 1368px) {
   .page-about .contact-form {
     width: 500px;
+  }
+  .page-about main {
+    height: 100vh;
+  }
+  .page-about .contact-form-container {
+    padding: 4rem 1.5rem;
+    margin: auto;
   }
 }
 /*# sourceMappingURL=Contact.css.map */

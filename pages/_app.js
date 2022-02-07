@@ -11,7 +11,6 @@ import '../styles/Contact.css'
 import "@fontsource/manrope"
 import Nav from '../Nav'
 import Footer from '../Footer'
-import Cursor from '../components/Cursor'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';

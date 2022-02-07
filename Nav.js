@@ -15,7 +15,7 @@ export default function Nav () {
     const handleScroll = () => {
         const offset = window.pageYOffset;
 
-        if(offset > 400) {
+        if(offset > 500) {
             setScrolled(true)
         }else {
             setScrolled(false)
