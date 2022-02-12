@@ -12,11 +12,6 @@
     }
 }
 
-.banana {
-    background: $secondaryColor;
-    height: 400px;
-}
-
 .page-home {
     header {
         height: 100vh;
@@ -54,39 +49,6 @@
             }
         }
 
-        nav {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            position: absolute;
-            width: 100%;
-            top: 0;
-            color: white;
-            padding: 1rem 1.5rem;
-
-            a {
-                margin-right: 2rem;
-                text-transform: uppercase;
-                font-weight: 500;
-                letter-spacing: 2px;
-                display: none;
-
-                &:last-of-type {
-                    margin: 0;
-                }
-            }
-        }
-
-        .anre-logo {
-            display: inline;
-
-            svg {
-                width: 150px;
-                height: auto;
-            }
-        }
-
         .scroll-down {
             position: absolute;
             bottom: 1rem;
@@ -115,6 +77,8 @@
         h1 {
             position: relative;
             text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 4px;
         }
 
         h2 {
@@ -263,13 +227,13 @@
     @media only screen and (min-width: 768px) {
         header {
             h1 {
-                font-size: 2.75rem;
+                font-size: 3rem;
                 overflow: hidden;
                 border-right: 2px solid white;
                 white-space: nowrap;
                 margin: 0 auto;
                 animation: 
-                  typing 3s steps(46, end),
+                  typing 3s steps(75, end),
                   blink-caret .75s step-end infinite;
             }
 
@@ -280,14 +244,6 @@
             .button {
                 display: inline-block;
                 margin: 1.5rem 1rem;
-            }
-
-            nav {
-                padding: 3rem 4rem;
-
-                a {
-                    display: inline-block;
-                }
             }
         }
 
@@ -343,11 +299,7 @@
     @media only screen and (min-width: 1368px) {
         header {
             h1 {
-                font-size: 3.25rem;
-            }
-
-            nav {
-                padding: 4rem 6rem;
+                font-size: 3.5rem;
             }
         }
 

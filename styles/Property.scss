@@ -18,10 +18,89 @@
     
     .property-images {
         position: relative;
-        height: 50vh;
+        height: 400px;
 
         img {
-            object-fit: cover;
+            //object-fit: cover;
+        }
+    }
+
+    .label {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 1.25rem;
+    }
+
+    //react-image-gallery styling
+    .image-gallery-slides {
+        height: 400px;
+    }
+
+    .image-gallery-slide {
+        height: 100%;
+    }
+
+    .image-gallery-slide.center {
+        height: 400px;
+    }
+
+    .image-gallery-thumbnails {
+        position: absolute;
+        bottom: 0;
+        left: 2rem;
+    }
+
+    .image-gallery-slide .image-gallery-image {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    //arrows
+    .image-gallery-left-nav .image-gallery-svg, .image-gallery-right-nav .image-gallery-svg {
+        height: 75px;
+    }
+
+    //thumbnail
+    .image-gallery-thumbnail .image-gallery-thumbnail-inner {
+        height: 60px;
+    }
+
+    .image-gallery-thumbnail .image-gallery-thumbnail-image {
+        height: 100%;
+    }
+
+    .image-gallery-thumbnail.active, .image-gallery-thumbnail:focus {
+        border: 4px solid white;
+    }
+
+    .image-gallery-thumbnail.active, .image-gallery-thumbnail:hover {
+        border: 4px solid white;
+    }
+
+    .image-gallery-icon {
+        filter: drop-shadow(0 2px 2px rgb(90, 90, 90));
+
+        &:hover {
+            color: $primaryColor;
+        }
+    }
+
+    //fullscreen mode
+    .fullscreen {
+        .image-gallery-slides {
+            height: 100vh;
+            width: fit-content;
+            margin: auto;
+
+            .image-gallery-image {
+                object-fit: contain
+            }
+        }
+    
+        .image-gallery-slide.center {
+            height: 100vh;
+            width: fit-content;
+            margin: auto;
         }
     }
 
@@ -88,6 +167,10 @@
             width: 215px;
             margin-right: 1rem;
         }
+
+        .image-gallery-thumbnails {
+            left: 3rem;
+        }
     }
 
     @media only screen and (min-width: 768px) {
@@ -95,6 +178,15 @@
             form {
                 width: 400px;
             }
+        }
+
+        .image-gallery-thumbnails {
+            left: 4rem;
+        }
+
+        .label {
+            margin-top: 0;
+            font-size: 1.4rem;
         }
     }
 
@@ -160,11 +252,23 @@
         .property-information {
             width: 800px;
         }
+        
+        .property-images {
+            height: 600px;
+        }
+
+        .image-gallery-slides {
+            height: 600px;
+        }
+    
+        .image-gallery-slide.center {
+            height: 600px;
+        }
     }
 
     @media only screen and (min-width: 1920px) {
         .property-images {
-            height: 500px;
+            height: 600px;
         }
     }
 }

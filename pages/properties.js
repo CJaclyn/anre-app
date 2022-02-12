@@ -2,8 +2,23 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link';
 import { Icon } from '@iconify/react';
+import HeaderNav from '../components/HeaderNav';
+import { fetchAPI } from '../lib/api';
 
-export default function Properties() {
+export default function Properties({ listingData, listingImages }) {
+    const listings = listingData['data'];
+    const listing = []
+    const images = listingImages['data'][0].attributes;
+  
+    function getListings() {
+      for(let i in listings) {
+        listing.push(listings[i].attributes)
+      }
+      return listing;
+    }
+
+    getListings();
+
     return (
         <div className="page-properties">
             <Head>
@@ -14,132 +29,101 @@ export default function Properties() {
 
             <header>
                 <h1>Properties</h1>
+                <div className="background"></div>
+                <HeaderNav />
             </header>
+            <div className="filters">
+                <form>
+                    <select id="forsale" name="forsale">
+                        <option value="forsale">For sale</option>
+                        <option value="sold">Sold</option>
+                        <option value="all">All</option>
+                    </select>
+                    <select id="city" name="city">
+                        <option value="" disabled selected hidden>City</option>
+                        <option value="e">Eagan</option>
+                        <option value="s">St. Paul</option>
+                        <option value="g">Golden Valley</option>
+                        <option value="d">Duluth</option>
+                        <option value="i">International Falls</option>
+                    </select>
+                    <select id="price" name="price">
+                        <option value="" disabled selected hidden>Price</option>
+                        <option value="100">$100,000-200,000</option>
+                        <option value="200">$200,000-300,000</option>
+                        <option value="300">$300,000-400,000</option>
+                        <option value="300">$400,000-500,000</option>
+                        <option value="300">$500,000+</option>
+                    </select>
+                    <select id="type" name="type">
+                    <option value="" disabled selected hidden>Type</option>
+                        <option value="single-family">Single-family</option>
+                        <option value="condo">Condo</option>
+                        <option value="townhouse">Townhouse</option>
+                    </select>
+                    <select id="bedroom" name="bedroom">
+                        <option value="" disabled selected hidden>Bedroom</option>
+                        <option value="1">1 Bed</option>
+                        <option value="2">2 Bed</option>
+                        <option value="3">3 Bed</option>
+                        <option value="4">4+ Bed</option>
+                    </select>
+                    <button className="button">Search</button>
+                </form>
+            </div>
             <main>
-                <Link href="/property/test">
+            {listing.map(({ slug, bed, bath, sqft, address, city, price, status }) => (
+                <Link href={`/property/${ slug }`} key={ slug } passHref>
                     <a className="card">
                         <div className="property-card">
+                            <div className="status-label">
+                                <p>{ status == 'ForSale' ? 'For Sale' : status }</p>
+                            </div>
                             <div className="property-image">
                                 <Image 
-                                    src="/clients/client.jpg"
+                                    src="/house2.jpg"
                                     alt="" 
                                     layout="fill"
                                 />
                             </div>
                             <div className="property-info">
                                 <div className="property-top">
-                                    <p className="price">$100,000</p>
-                                    <p className="address">12345 Peony St., Garden Grove </p>
+                                    <p className="price">${ price.toLocaleString() }</p>
+                                    <p className="address">{ address }, { city }</p>
                                 </div>
                                 <div className="property-bottom">
                                     <div className="sqft info">
                                         <Icon icon="gis:square-pt" />
-                                        <p>1234 sqft</p>
+                                        <p>{ sqft.toLocaleString() } sqft</p>
                                     </div>
                                     <div className="bed info">
                                         <Icon icon="bx:bx-bed" />
-                                        <p>2 bed</p>
+                                        <p>{ bed } bed</p>
                                     </div>
                                     <div className="bath info">
                                         <Icon icon="bx:bx-bath" />
-                                        <p>2 bath</p>
+                                        <p>{ bath } bath</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </a>
                 </Link>
-
-                <div className="property-card">
-                    <div className="property-image">
-                        <Image 
-                            src="/clients/client.jpg"
-                            alt="" 
-                            layout="fill"
-                        />
-                    </div>
-                    <div className="property-info">
-                        <div className="property-top">
-                            <p className="price">$100,000</p>
-                            <p className="address">12345 Peony St., Garden Grove </p>
-                        </div>
-                        <div className="property-bottom">
-                            <div className="sqft info">
-                                <Icon icon="gis:square-pt" />
-                                <p>1234 sqft</p>
-                            </div>
-                            <div className="bed info">
-                                <Icon icon="bx:bx-bed" />
-                                <p>2 bed</p>
-                            </div>
-                            <div className="bath info">
-                                <Icon icon="bx:bx-bath" />
-                                <p>2 bath</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="property-card">
-                    <div className="property-image">
-                        <Image 
-                            src="/clients/client.jpg"
-                            alt="" 
-                            layout="fill"
-                        />
-                    </div>
-                    <div className="property-info">
-                        <div className="property-top">
-                            <p className="price">$100,000</p>
-                            <p className="address">12345 Peony St., Garden Grove </p>
-                        </div>
-                        <div className="property-bottom">
-                            <div className="sqft info">
-                                <Icon icon="gis:square-pt" />
-                                <p>1234 sqft</p>
-                            </div>
-                            <div className="bed info">
-                                <Icon icon="bx:bx-bed" />
-                                <p>2 bed</p>
-                            </div>
-                            <div className="bath info">
-                                <Icon icon="bx:bx-bath" />
-                                <p>2 bath</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="property-card">
-                    <div className="property-image">
-                        <Image 
-                            src="/clients/client.jpg"
-                            alt="" 
-                            layout="fill"
-                        />
-                    </div>
-                    <div className="property-info">
-                        <div className="property-top">
-                            <p className="price">$100,000</p>
-                            <p className="address">12345 Peony St., Garden Grove </p>
-                        </div>
-                        <div className="property-bottom">
-                            <div className="sqft info">
-                                <Icon icon="gis:square-pt" />
-                                <p>1234 sqft</p>
-                            </div>
-                            <div className="bed info">
-                                <Icon icon="bx:bx-bed" />
-                                <p>2 bed</p>
-                            </div>
-                            <div className="bath info">
-                                <Icon icon="bx:bx-bath" />
-                                <p>2 bath</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            ))}
             </main>
         </div>
     )
 }
+
+export async function getStaticProps() {
+    const listingData = await fetchAPI(`listings`)
+    const listingImages = await fetchAPI(`images??populate=*`)
+  
+    return {
+      props: {
+        listingData,
+        listingImages
+      },
+      revalidate: 60
+    }
+  }

@@ -22,11 +22,6 @@
   }
 }
 
-.banana {
-  background: #f8f8f8;
-  height: 400px;
-}
-
 .page-home header {
   height: 100vh;
   display: -webkit-box;
@@ -74,48 +69,6 @@
      object-fit: cover;
 }
 
-.page-home header nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  position: absolute;
-  width: 100%;
-  top: 0;
-  color: white;
-  padding: 1rem 1.5rem;
-}
-
-.page-home header nav a {
-  margin-right: 2rem;
-  text-transform: uppercase;
-  font-weight: 500;
-  letter-spacing: 2px;
-  display: none;
-}
-
-.page-home header nav a:last-of-type {
-  margin: 0;
-}
-
-.page-home header .anre-logo {
-  display: inline;
-}
-
-.page-home header .anre-logo svg {
-  width: 150px;
-  height: auto;
-}
-
 .page-home header .scroll-down {
   position: absolute;
   bottom: 1rem;
@@ -148,6 +101,8 @@
 .page-home header h1 {
   position: relative;
   text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 4px;
 }
 
 .page-home header h2 {
@@ -352,13 +307,13 @@
 
 @media only screen and (min-width: 768px) {
   .page-home header h1 {
-    font-size: 2.75rem;
+    font-size: 3rem;
     overflow: hidden;
     border-right: 2px solid white;
     white-space: nowrap;
     margin: 0 auto;
-    -webkit-animation: typing 3s steps(46, end), blink-caret 0.75s step-end infinite;
-            animation: typing 3s steps(46, end), blink-caret 0.75s step-end infinite;
+    -webkit-animation: typing 3s steps(75, end), blink-caret 0.75s step-end infinite;
+            animation: typing 3s steps(75, end), blink-caret 0.75s step-end infinite;
   }
   .page-home header h2 {
     font-size: 1.25rem;
@@ -366,12 +321,6 @@
   .page-home header .button {
     display: inline-block;
     margin: 1.5rem 1rem;
-  }
-  .page-home header nav {
-    padding: 3rem 4rem;
-  }
-  .page-home header nav a {
-    display: inline-block;
   }
   .page-home .welcome {
     font-size: 1.5rem;
@@ -419,10 +368,7 @@
 
 @media only screen and (min-width: 1368px) {
   .page-home header h1 {
-    font-size: 3.25rem;
-  }
-  .page-home header nav {
-    padding: 4rem 6rem;
+    font-size: 3.5rem;
   }
   .page-home .welcome {
     font-size: 1.5rem;

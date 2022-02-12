@@ -1,5 +1,45 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&display=swap");
-.page-about main {
+.page-contact header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 400px;
+  background: url("/contact.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+  position: relative;
+}
+
+.page-contact header h1 {
+  color: white;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1rem;
+}
+
+.page-contact header .background {
+  background: rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+.page-contact main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -9,50 +49,29 @@
           flex-direction: column;
 }
 
-.page-about .contact-left {
-  background-color: #d1d1ff;
-  height: 400px;
-  padding: 4rem 1.5rem;
-  background: url("/monke.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.page-about .contact-left h1, .page-about .contact-left p {
-  color: white;
-}
-
-.page-about .contact-left h1 {
-  margin-bottom: 1.5rem;
-}
-
-.page-about .contact-left p, .page-about .contact-left .iconify {
-  display: inline;
-}
-
-.page-about .contact-left .iconify {
-  font-size: 1.3rem;
-  margin-right: 1rem;
-}
-
-.page-about .contact-form-container {
+.page-contact .contact-form-container {
   padding: 2rem 1.5rem;
 }
 
-.page-about .label {
-  font-size: 1.25rem;
+.page-contact form input, .page-contact form textarea {
+  padding: 1.25rem 1rem;
 }
 
 @media only screen and (min-width: 500px) {
-  .page-about .contact-form {
+  .page-contact .contact-form {
     width: 400px;
     margin: 0 auto;
   }
 }
 
+@media only screen and (min-width: 768px) {
+  .page-contact header h1 {
+    font-size: 3rem;
+  }
+}
+
 @media only screen and (min-width: 1024px) {
-  .page-about main {
+  .page-contact main {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -62,22 +81,27 @@
             flex-direction: row;
     height: 800px;
   }
-  .page-about .contact-left {
-    height: 100%;
-    width: 50%;
-  }
 }
 
 @media only screen and (min-width: 1368px) {
-  .page-about .contact-form {
-    width: 500px;
+  .page-contact header h1 {
+    font-size: 3.5rem;
   }
-  .page-about main {
+  .page-contact .contact-form {
+    width: 600px;
+  }
+  .page-contact main {
     height: 100vh;
   }
-  .page-about .contact-form-container {
+  .page-contact .contact-form-container {
     padding: 4rem 1.5rem;
     margin: auto;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .page-contact header h1 {
+    font-size: 4rem;
   }
 }
 /*# sourceMappingURL=Contact.css.map */

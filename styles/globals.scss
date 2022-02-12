@@ -163,12 +163,60 @@ input, textarea {
 }
 
 input {
-  margin-bottom: 1rem;
   height: 2rem;
+}
+
+.form-item {
+  margin-bottom: 1rem;
 }
 
 .card {
   cursor: pointer;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.error-msg {
+  font-size: .9rem;
+  color: $primaryColor;
+  margin: 0;
+}
+
+header {
+  nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    color: white;
+    padding: 1rem 1.5rem;
+
+    a {
+        margin-right: 2rem;
+        text-transform: uppercase;
+        font-weight: 500;
+        letter-spacing: 2px;
+        display: none;
+
+        &:last-of-type {
+            margin: 0;
+        }
+    }
+}
+
+.anre-logo {
+    display: inline;
+
+    svg {
+        width: 150px;
+        height: auto;
+    }
+}
 }
 
 /**************************/
@@ -238,6 +286,17 @@ footer {
 }
 
 @media only screen and (min-width: 768px) {
+  header {
+    nav {
+      padding: 3rem 2rem;
+      justify-content: space-between;
+
+      a {
+          display: inline-block;
+      }
+    }
+  }
+
   footer {
     align-items: flex-start;
 
@@ -294,6 +353,12 @@ footer {
 }
 
 @media only screen and (min-width: 1368px) {
+  header {
+    nav {
+        padding: 4rem 6rem;
+    }
+  }
+
   footer {
     .section {
       padding-left: 4rem;
@@ -312,6 +377,12 @@ footer {
 @media only screen and (min-width: 1920px) {
   h1 {
     font-size: 3rem;
+  }
+
+  header {
+    nav {
+      padding: 3rem 8rem;
+    }
   }
 
   footer {

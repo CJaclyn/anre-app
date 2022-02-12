@@ -1,44 +1,50 @@
 @import 'variables';
 
-.page-about {
-    main {
+.page-contact {
+    header {
         display: flex;
         flex-direction: column;
-    }
-
-    .contact-left {
-        background-color: rgb(209, 209, 255);
+        align-items: center;
+        justify-content: center;
+        width: 100%;
         height: 400px;
-        padding: $sectionPadding;
-        background: url('/monke.jpg');
+        background: url('/contact.jpg');
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-
-        h1, p {
-            color: white;
-        }
+        z-index: 1;
+        position: relative;
 
         h1 {
-            margin-bottom: 1.5rem;
+            color: white;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1rem;
         }
 
-        p, .iconify {
-            display: inline;
+        .background {
+            background: rgba(0, 0, 0, 0.10);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: -1;
         }
+    }
 
-        .iconify {
-            font-size: 1.3rem;
-            margin-right: 1rem;
-        }
+    main {
+        display: flex;
+        flex-direction: column;
     }
 
     .contact-form-container {   
         padding: 2rem 1.5rem;   
     }
 
-    .label {
-        font-size: 1.25rem;
+    form {
+        input, textarea {
+            padding: 1.25rem 1rem;
+        }
     }
 
     @media only screen and (min-width: 500px) {
@@ -48,22 +54,31 @@
         }
     }
 
+    @media only screen and (min-width: 768px) {
+        header {
+            h1 {
+                font-size: 3rem;
+            }
+        }
+    }
+
     @media only screen and (min-width: 1024px) {
         main {
             display: flex;
             flex-direction: row;
             height: 800px;
         }
-
-        .contact-left {
-            height: 100%;
-            width: 50%;
-        }
     }
 
     @media only screen and (min-width: 1368px) {
+        header {
+            h1 {
+                font-size: 3.5rem;
+            }
+        }
+
         .contact-form {
-            width: 500px;
+            width: 600px;
         }
 
         main {
@@ -73,6 +88,14 @@
         .contact-form-container {   
             padding: $sectionPadding;
             margin: auto;
+        }
+    }
+
+    @media only screen and (min-width: 1920px) {
+        header {
+            h1 {
+                font-size: 4rem;
+            }
         }
     }
 }

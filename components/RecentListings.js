@@ -5,13 +5,13 @@ export default function RecentListings () {
 
     return (
         <section className="recent-listings" data-aos="fade-in">
-          <h1>Recent Properties</h1>
+          <h1>Recent Homes</h1>
           <div className="recent-listings-container house-1">
             <div className="recent-listing-container">
               <div className="recent-listing-img" data-aos="flip-left" data-aos-duration="1500">
                 <Link href="/">
                   <a>
-                    <Image src="/house.jpeg" alt="house" layout="fill"/>
+                    <Image src="/house2.jpg" alt="house" layout="fill"/>
                   </a>
                 </Link>
               </div>

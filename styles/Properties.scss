@@ -1,25 +1,101 @@
 @import 'variables';
 
 .page-properties {
-    padding: $sectionPadding;
     display: flex;
     flex-direction: column;
     align-items: center;
 
     header {
-        padding: 2rem 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 400px;
+        background: url('/properties.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 1;
+        position: relative;
+
+        h1 {
+            color: white;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1rem;
+        }
+
+        .background {
+            background: rgba(0, 0, 0, 0.25);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: -1;
+        }
+    }
+
+    .filters {
+        width: 100%;
+        background: $secondaryColor;
+    }
+
+    form {
+        padding: 1.5rem;
+
+        select, input {
+            height: 50px;
+            width: 100%;
+            border: none;
+            background: white;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            letter-spacing: .5px;
+            color: rgb(122, 122, 122);
+            padding: .5rem 1rem;
+            font-family: $primaryFont;
+        }
+    
+        select {
+            cursor: pointer;
+        }
+    
+        ::placeholder {
+            color: rgb(122, 122, 122);
+            opacity: 1;
+        }
     }
 
     main {
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding: $sectionPadding;
+    }
+
+    .status-label {
+        position: absolute;
+        top: 1rem;
+        background: rgba(0, 0, 0, 0.603);
+        z-index: 1;
+        width: 125px;
+        padding: .1rem 0;
+
+        p {
+            color: white;
+            font-weight: 500;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
     }
 
     .property-card {
         height: auto;
         width: 100%;
         margin-bottom: 1rem;
+        position: relative;
 
         p {
             margin: 0;
@@ -85,14 +161,40 @@
         .property-card {
             width: 400px;
         }
+
+        .filters {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .button {
+            margin-top: 0;
+            width: 150px;
+        }
+
+        form {
+            select, input {
+                min-width: 150px;
+                width: auto;
+                display: inline-block;
+                margin-right: 1rem;
+            }
+        }
     }
 
     @media only screen and (min-width: 768px) {
+        header {
+            h1 {
+                font-size: 3rem;
+            }
+        }
+
         main {
-            display: flex;
             flex-direction: row;
-            align-items: center;
             flex-wrap: wrap;
+            width: 730px;
+            margin-right: -1rem;
         }
 
         .property-card {
@@ -101,13 +203,49 @@
         }
     }
 
+    @media only screen and (min-width: 1246px) {
+        main {
+            min-width: 1071px;
+        }
+    }
+
+    @media only screen and (min-width: 1144px) {
+        form {
+            select, input {
+                margin-bottom: 0;
+            }
+        }
+    }
+
     @media only screen and (min-width: 1368px) {
+        header {
+            h1 {
+                font-size: 3.5rem;
+            }
+        }
+        
+        main {
+            min-width: 1146px;
+        }
+
         .property-card {
             width: 350px;
         }
 
         .property-image {
             height: 175px;
+        }
+    }
+
+    @media only screen and (min-width: 1920px) {
+        header {
+            h1 {
+                font-size: 4rem;
+            }
+        }
+
+        main {
+            min-width: 1512px;
         }
     }
 }

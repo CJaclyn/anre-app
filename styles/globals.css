@@ -175,12 +175,67 @@ input, textarea {
 }
 
 input {
-  margin-bottom: 1rem;
   height: 2rem;
+}
+
+.form-item {
+  margin-bottom: 1rem;
 }
 
 .card {
   cursor: pointer;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.error-msg {
+  font-size: .9rem;
+  color: #BB3A3A;
+  margin: 0;
+}
+
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  color: white;
+  padding: 1rem 1.5rem;
+}
+
+header nav a {
+  margin-right: 2rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 2px;
+  display: none;
+}
+
+header nav a:last-of-type {
+  margin: 0;
+}
+
+header .anre-logo {
+  display: inline;
+}
+
+header .anre-logo svg {
+  width: 150px;
+  height: auto;
 }
 
 /**************************/
@@ -261,6 +316,15 @@ footer .sitemap a {
 }
 
 @media only screen and (min-width: 768px) {
+  header nav {
+    padding: 3rem 2rem;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  header nav a {
+    display: inline-block;
+  }
   footer {
     -webkit-box-align: start;
         -ms-flex-align: start;
@@ -329,6 +393,9 @@ footer .sitemap a {
 }
 
 @media only screen and (min-width: 1368px) {
+  header nav {
+    padding: 4rem 6rem;
+  }
   footer .section {
     padding-left: 4rem;
   }
@@ -343,6 +410,9 @@ footer .sitemap a {
 @media only screen and (min-width: 1920px) {
   h1 {
     font-size: 3rem;
+  }
+  header nav {
+    padding: 3rem 8rem;
   }
   footer .section {
     padding-left: 6rem;
