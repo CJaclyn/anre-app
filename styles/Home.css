@@ -23,6 +23,7 @@
 }
 
 .page-home header {
+  min-height: 640px;
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -139,42 +140,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-@-webkit-keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@-webkit-keyframes blink-caret {
-  from, to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: white;
-  }
-}
-
-@keyframes blink-caret {
-  from, to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: white;
-  }
 }
 
 .page-home .welcome {
@@ -308,12 +273,7 @@
 @media only screen and (min-width: 768px) {
   .page-home header h1 {
     font-size: 3rem;
-    overflow: hidden;
-    border-right: 2px solid white;
-    white-space: nowrap;
     margin: 0 auto;
-    -webkit-animation: typing 3s steps(75, end), blink-caret 0.75s step-end infinite;
-            animation: typing 3s steps(75, end), blink-caret 0.75s step-end infinite;
   }
   .page-home header h2 {
     font-size: 1.25rem;

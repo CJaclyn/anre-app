@@ -38,7 +38,11 @@ export default function Footer () {
                 </div>
             </div>
             <div className="footer-bottom section">
-                <p>Facebook</p>
+                <p><a   
+                    href="https://www.facebook.com/pages/category/Real-Estate-Agent/Andy-Nguyen-Real-Estate-Inc-102133454501876/"
+                    target="_blank"
+                    rel="noreferrer">Facebook
+                </a></p>
                 <p>Privacy Policy</p>
                 <p>©2022 Andy Nguyen Real Estate Inc.</p>
             </div>

@@ -110,6 +110,13 @@
       -ms-flex-align: center;
           align-items: center;
   padding: 4rem 1.5rem;
+  position: relative;
+}
+
+.page-properties .results-count {
+  position: absolute;
+  top: 0;
+  font-size: .9rem;
 }
 
 .page-properties .status-label {

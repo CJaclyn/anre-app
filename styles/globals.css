@@ -102,7 +102,7 @@ a {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   font-size: 1rem;
   -webkit-transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -172,6 +172,7 @@ input, textarea {
   font-size: 1.1rem;
   font-family: "Manrope", sans-serif;
   border: solid 1px #dbdbdb;
+  color: #474747;
 }
 
 input {
@@ -180,6 +181,10 @@ input {
 
 .form-item {
   margin-bottom: 1rem;
+}
+
+.form-item:last-of-type {
+  margin-bottom: 0;
 }
 
 .card {
@@ -191,9 +196,10 @@ input {
 }
 
 .error-msg {
-  font-size: .9rem;
-  color: #BB3A3A;
+  font-size: .9rem !important;
+  color: grey;
   margin: 0;
+  text-align: left;
 }
 
 header nav {
@@ -207,9 +213,9 @@ header nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   position: absolute;
   width: 100%;
   top: 0;
@@ -229,12 +235,16 @@ header nav a:last-of-type {
   margin: 0;
 }
 
+header nav .mobile-nav a {
+  display: block;
+}
+
 header .anre-logo {
   display: inline;
 }
 
 header .anre-logo svg {
-  width: 150px;
+  width: 125px;
   height: auto;
 }
 
@@ -311,7 +321,7 @@ footer .sitemap a {
   padding: 1rem;
 }
 
-.footer-bottom p {
+.footer-bottom p, .footer-bottom a {
   font-size: .9rem;
 }
 
@@ -395,6 +405,13 @@ footer .sitemap a {
 @media only screen and (min-width: 1368px) {
   header nav {
     padding: 4rem 6rem;
+  }
+  header .anre-logo {
+    display: inline;
+  }
+  header .anre-logo svg {
+    width: 150px;
+    height: auto;
   }
   footer .section {
     padding-left: 4rem;

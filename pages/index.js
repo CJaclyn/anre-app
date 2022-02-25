@@ -1,15 +1,20 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
-import RecentListings from '../components/RecentListings'
 import Testimonials from '../Testimonials'
 import { Icon } from '@iconify/react'
 import Slider from "react-slick";
 import { HeaderImages } from '../HeaderImages'
 import HeaderNav from '../components/HeaderNav'
+import { fetchAPI } from '../lib/api';
 
-export default function Home() {
-  const data = HeaderImages;
+export default function Home({ listingData }) {
+  const listings = listingData['data'];
+  const listingCount = listings.length;
+  const listing = [];
+  listing.push(listings[listingCount-1].attributes)
+  listing.push(listings[listingCount-2].attributes)
+  const data = HeaderImages
   const settings = {
     dots: false,
     infinite: true,
@@ -21,7 +26,9 @@ export default function Home() {
     cssEase: "ease-in-out",
     arrows: false, 
     pauseOnHover: false,
-  };
+  }
+
+  console.log(listing)
 
   return (
     <div className="page-home">
@@ -104,7 +111,37 @@ export default function Home() {
           </div>
         </section>
 
-        <RecentListings />
+        <section className="recent-listings" data-aos="fade-in">
+          <h1>Recent Homes</h1>
+          {listing.map(({ slug, type, bed, bath, sqft, address, city, price, thumbnail, description }, index) => (
+            <div className={`recent-listings-container house-${ index+1 }`}>
+              <div className="recent-listing-container">
+                <div className="recent-listing-img" data-aos="flip-left" data-aos-duration="1500">
+                  <Link href="/">
+                    <a>
+                      <Image src="/house2.jpg" alt="house" layout="fill"/>
+                      {/*<Image src={ thumbnail.data.attributes.url } alt="house" layout="fill"/>*/}
+                    </a>
+                  </Link>
+                </div>
+                <div className="recent-listing-info" data-aos="fade-in" >
+                  <p className="label">{ type == 'SingleFamily' ? 'Single-family' : type }</p>
+                  <h2 className="address">{ address }, { city }</h2>
+                  <h2 className="price">${ price.toLocaleString() }</h2>
+                  <p className="details">{ sqft } sqft · { bed } bed · { bath } bath</p>
+                  <p className="recent-listing-desc">{ description }</p>
+                  <Link href={`/property/${ slug }`}>
+                    <a className="basic-link">View house</a>
+                  </Link>    
+                </div>
+              </div>  
+            </div>
+          ))}
+          <Link href="/properties">
+            <a className="button">All Properties</a>
+          </Link>    
+        </section>
+
         <Testimonials />
 
         <section className="contact-section">
@@ -121,8 +158,18 @@ export default function Home() {
             </Link>
           </section>
         </section>
-
       </main>
     </div>
   )
+}
+
+export async function getStaticProps() {
+  const listingData = await fetchAPI(`listings?populate=*`)
+
+  return {
+    props: {
+      listingData
+    },
+    revalidate: 60
+  }
 }

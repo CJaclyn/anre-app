@@ -29,6 +29,10 @@
   margin: 0;
 }
 
+.recent-listings .address {
+  font-weight: 600;
+}
+
 .recent-listings-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -38,6 +42,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   padding-bottom: 4rem;
+  width: 300px;
 }
 
 .recent-listing-container {
@@ -82,6 +87,9 @@
   .recent-listing-container {
     width: 450px;
   }
+  .recent-listings-container {
+    width: auto;
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -94,9 +102,9 @@
 @media only screen and (min-width: 1024px) {
   .recent-listing-container {
     width: auto;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     width: 850px;
     margin-bottom: 4rem;
   }
@@ -154,9 +162,6 @@
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
   }
   .recent-listing-info {
     position: relative;

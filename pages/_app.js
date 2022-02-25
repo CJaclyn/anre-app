@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     AOS.init({
       duration: 1000,
-      disable: 'mobile',
+      disable: "mobile",
       //once: true
     })
     AOS.refresh()

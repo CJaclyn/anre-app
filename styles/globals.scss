@@ -92,7 +92,7 @@ a {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   font-size: 1rem;
   transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
   font-weight: 500;
@@ -160,6 +160,7 @@ input, textarea {
   font-size: 1.1rem;
   font-family: $primaryFont;
   border: solid 1px rgb(219, 219, 219);
+  color: $fontColor;
 }
 
 input {
@@ -168,6 +169,10 @@ input {
 
 .form-item {
   margin-bottom: 1rem;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 .card {
@@ -179,9 +184,10 @@ input {
 }
 
 .error-msg {
-  font-size: .9rem;
-  color: $primaryColor;
+  font-size: .9rem !important;
+  color: grey;
   margin: 0;
+  text-align: left;
 }
 
 header {
@@ -189,7 +195,7 @@ header {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     position: absolute;
     width: 100%;
     top: 0;
@@ -207,13 +213,17 @@ header {
             margin: 0;
         }
     }
+
+    .mobile-nav a {
+      display: block;
+    }
 }
 
 .anre-logo {
     display: inline;
 
     svg {
-        width: 150px;
+        width: 125px;
         height: auto;
     }
 }
@@ -280,7 +290,7 @@ footer {
   border-top: solid 1px rgb(219, 219, 219);
   padding: 1rem;
 
-  p {
+  p, a {
     font-size: .9rem;
   }
 }
@@ -356,6 +366,15 @@ footer {
   header {
     nav {
         padding: 4rem 6rem;
+    }
+
+    .anre-logo {
+      display: inline;
+  
+      svg {
+          width: 150px;
+          height: auto;
+      }
     }
   }
 

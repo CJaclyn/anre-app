@@ -1,12 +1,21 @@
 import Link from 'next/link'
+import React, { useEffect, useState } from 'react'
 import { Icon } from '@iconify/react'
+import menuAlt3 from '@iconify/icons-heroicons-outline/menu-alt-3'
 
 export default function HeaderNav () {
+  const [showMenu, setShowMenu] = useState(false);
+
+  const menuStyle = {
+    bottom: showMenu === true ? '0' : '100%',
+    visibility: showMenu === true ? 'visible' : 'hidden'
+  }
+
     return (
         <nav>
           <div className="anre-logo">
             <Link href="/">
-              <svg width="80.218mm" height="35.566mm" version="1.1" viewBox="0 0 80.218 35.566" xmlns="http://www.w3.org/2000/svg" xmlnsCc="http://creativecommons.org/ns#" xmlnsDc="http://purl.org/dc/elements/1.1/" xmlnsRdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <svg width="80.218mm" height="35.566mm" version="1.1" viewBox="0 0 80.218 35.566" xmlns="http://www.w3.org/2000/svg" xmlnscc="http://creativecommons.org/ns#" xmlnsdc="http://purl.org/dc/elements/1.1/" xmlnsrdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
                   <g transform="translate(-71.424 -36.611)">
                   <g fill="#fff" strokeWidth=".1" className="fill">
                       <path d="m94.046 71.965q-0.29633 0-0.47414-0.16087-0.16933-0.1524-0.16933-0.4064t0.11853-0.52494q0.11853-0.2794 0.2286-0.55034 0.11853-0.27093 0.11853-0.4826 0-0.24553-0.14393-0.37253-0.14393-0.13547-0.31327-0.23707-0.18627 0.4826-0.4064 0.93134-0.22013 0.44027-0.3556 0.67734l-0.09313-0.1778q0.11853-0.22013 0.3048-0.635 0.19473-0.42334 0.381-0.94827-0.08467-0.08467-0.08467-0.21167 0-0.24553 0.13547-0.41487 0.14393-0.16933 0.2286-0.16933 0.1016 0 0.11853 0.09313 0.0254 0.08467 0.0254 0.127t-0.04233 0.16087q-0.04233 0.11853-0.0508 0.1524 0.0085 0.11007 0.13547 0.21167 0.13547 0.09313 0.3048 0.21167 0.1778 0.11853 0.3048 0.29633 0.13547 0.1778 0.13547 0.44874 0 0.24553-0.11007 0.508-0.1016 0.26247-0.21167 0.49107-0.1016 0.2286-0.1016 0.4064 0 0.13547 0.06773 0.18627 0.0762 0.04233 0.16933 0.04233 0.2032 0 0.41487-0.11853 0.22014-0.127 0.42334-0.32173 0.21167-0.19473 0.37254-0.4064 0.16087-0.22013 0.23707-0.4064l0.14393 0.11007q-0.16087 0.3556-0.44874 0.70274t-0.64347 0.56727q-0.34713 0.22013-0.71967 0.22013z"/>
@@ -42,18 +51,50 @@ export default function HeaderNav () {
             </Link>
           </div> 
           <div className="header-nav-links">
+            <Icon 
+                icon={ menuAlt3 } 
+                className="mobile-nav-icon"
+                onClick={ () => setShowMenu(!showMenu) }
+            />
             <Link href="/"><a>Home</a></Link>
             <Link href="/properties"><a>Properties</a></Link>
             <Link href="/about"><a>About</a></Link>
             <Link href="/contact"><a>Contact</a></Link>
-            <a 
-                href="https://www.facebook.com/pages/category/Real-Estate-Agent/Andy-Nguyen-Real-Estate-Inc-102133454501876/" 
+            <a href="https://www.facebook.com/pages/category/Real-Estate-Agent/Andy-Nguyen-Real-Estate-Inc-102133454501876/" 
                 target="_blank"
-                rel="noreferrer"
-            >
+                rel="noreferrer">
                 <Icon icon="brandico:facebook" />
             </a>
           </div>
+          
+          <div className="mobile-nav" style={ menuStyle }>
+              <div className="mobile-top">
+                  <Icon 
+                      icon="bi:x" 
+                      color="white"
+                      className="mobile-nav-icon exit-icon" 
+                      onClick={ () => setShowMenu(!showMenu) }
+                  />
+              </div>
+
+              <div className="mobile-nav-items">
+                  <Link href="/">
+                      <a onClick={ () => setShowMenu(!showMenu) }>Home</a>
+                  </Link>
+                  <Link href="/properties">
+                      <a onClick={ () => setShowMenu(!showMenu) }>Properties</a>
+                  </Link>
+                  <Link href="/about">
+                      <a onClick={ () => setShowMenu(!showMenu) }>About</a>
+                  </Link>
+                  <Link href="/contact">
+                      <a onClick={ () => setShowMenu(!showMenu) }>Contact</a>
+                  </Link>
+                  <Link href="https://www.facebook.com/pages/category/Real-Estate-Agent/Andy-Nguyen-Real-Estate-Inc-102133454501876/">
+                      <a onClick={ () => setShowMenu(!showMenu) }>Facebook</a>
+                  </Link>
+              </div>
+            </div>
         </nav>
     )
 }

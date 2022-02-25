@@ -14,6 +14,7 @@
 
 .page-home {
     header {
+        min-height: 640px;
         height: 100vh;
         display: flex;
         flex-direction: column;
@@ -109,16 +110,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
-
-    @keyframes typing {
-        from { width: 0 }
-        to { width: 100% }
-    }
-      
-    @keyframes blink-caret {
-        from, to { border-color: transparent; }
-        50% { border-color: white; }
     }
 
     .welcome {
@@ -228,13 +219,7 @@
         header {
             h1 {
                 font-size: 3rem;
-                overflow: hidden;
-                border-right: 2px solid white;
-                white-space: nowrap;
                 margin: 0 auto;
-                animation: 
-                  typing 3s steps(75, end),
-                  blink-caret .75s step-end infinite;
             }
 
             h2 {

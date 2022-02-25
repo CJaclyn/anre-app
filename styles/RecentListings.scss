@@ -19,12 +19,17 @@
         h2 {
             margin: 0;
         }
+
+        .address {
+            font-weight: 600;
+        }
     }
 
     .recent-listings-container {
         display: flex;
         flex-direction: column;
         padding-bottom: 4rem;
+        width: 300px;
     }
 
     .recent-listing-container {
@@ -61,6 +66,10 @@
         .recent-listing-container {
             width: 450px;
         }
+
+        .recent-listings-container {
+            width: auto;
+        }
     }
 
     @media only screen and (min-width: 768px) {
@@ -73,7 +82,7 @@
     @media only screen and (min-width: 1024px) {
         .recent-listing-container {
             width: auto;
-            align-items: start;
+            align-items: center;
             width: 850px;
             margin-bottom: 4rem;
         }
@@ -130,7 +139,6 @@
             width: 100%; 
             display: flex;
             justify-content: center;
-            align-items: center;
         }
 
         .recent-listing-info {

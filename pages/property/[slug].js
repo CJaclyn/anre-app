@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Head from 'next/head'
 import ContactForm from '../../components/ContactForm'
 import { Icon } from '@iconify/react';
@@ -8,32 +7,31 @@ import ImageGallery from 'react-image-gallery';
 
 export default function Property ({ listingData, listingImages }) {
     const listing = listingData['data'][0].attributes;
-    const imageArray = listingImages['data'][0].attributes.photos['data'];
-    const image = [];
 
-    function getImages() {
-        for(let i in imageArray) {
-            image.push(imageArray[i].attributes.url);
+    if(listing.image.data !== null) {
+        const imageArray = listingImages['data'][0].attributes.photos['data'];
+        var image = [];
+        var slideshow = [];
+    
+        function getImages() {
+            for(let i in imageArray) {
+                slideshow[i] = {
+                    original: imageArray[i].attributes.url,
+                    thumbnail: imageArray[i].attributes.url
+                }
+            }
+            return image, slideshow;
         }
-        return image;
+        getImages();
+    }else {
+        var slideshow = []
+        slideshow = [
+            {
+                original: listing.thumbnail.data.attributes.url,
+                thumbnail: listing.thumbnail.data.attributes.url
+            }
+        ];
     }
-
-    getImages();
-
-    const slideshow = [
-        {
-          original: '/images/header/1.jpg',
-          thumbnail: '/images/header/1.jpg',
-        },
-        {
-            original: '/images/header/2.jpg',
-            thumbnail: '/images/header/2.jpg',
-        },
-        {
-            original: '/images/header/3.jpeg',
-            thumbnail: '/images/header/3.jpeg',
-        },
-      ];
 
     return (
         <div className="page-property">
