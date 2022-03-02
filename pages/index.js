@@ -107,7 +107,7 @@ export default function Home({ listingData, aboutData }) {
         <section className="recent-listings" data-aos="fade-in">
           <h1>Recent Homes</h1>
           {listing.map(({ slug, type, bed, bath, sqft, address, city, price, thumbnail, description }, index) => (
-            <div className={`recent-listings-container house-${ index+1 }`}>
+            <div className={`recent-listings-container house-${ index+1 }`} key={ slug }>
               <div className="recent-listing-container">
                 <div className="recent-listing-img" data-aos="fade-up" data-aos-duration="1500">
                   <Link href="/">
