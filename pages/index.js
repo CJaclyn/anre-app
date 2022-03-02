@@ -112,8 +112,7 @@ export default function Home({ listingData, aboutData }) {
                 <div className="recent-listing-img" data-aos="fade-up" data-aos-duration="1500">
                   <Link href="/">
                     <a>
-                      <Image src="/house2.jpg" alt="house" layout="fill"/>
-                      {/*<Image src={ thumbnail.data.attributes.url } alt="house" layout="fill"/>*/}
+                      { <Image src={ thumbnail.data.attributes.url } alt="house" layout="fill"/> }
                     </a>
                   </Link>
                 </div>
