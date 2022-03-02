@@ -10,10 +10,7 @@ import { fetchAPI } from '../lib/api';
 
 export default function Home({ listingData, aboutData }) {
   const listings = listingData['data'];
-  const listingCount = listings.length;
-  const listing = [];
-  listing.push(listings[listingCount-1].attributes)
-  listing.push(listings[listingCount-2].attributes)
+  var listing = [];
   const data = HeaderImages
   var about; 
   const settings = {
@@ -30,9 +27,29 @@ export default function Home({ listingData, aboutData }) {
   }
 
   if (aboutData['data'] == null) {
-    about = "There was an error. Please check back later.";
+    about = "There was an error. Please check back later";
   }else {
       about = aboutData['data'].attributes.content;
+  }
+
+  if(listings !== null && listings.length >= 2) {
+    var listingCount = listings.length;
+    listing.push(listings[listingCount-1].attributes)
+    listing.push(listings[listingCount-2].attributes)
+  }else if(listings !== null && listings.length == 1) {
+    listing.push(listings[0].attributes)
+  }else {
+    listing = [{
+      slug: '/',
+      type: 'N/A',
+      bed: 0,
+      bath: 0,
+      city: 'N/A',
+      address: 'N/A',
+      price: 0,
+      sqft: 0,
+      description: 'There was an error, please check back later'
+    }]
   }
 
   return (
@@ -116,11 +133,19 @@ export default function Home({ listingData, aboutData }) {
             <div className={`recent-listings-container house-${ index+1 }`} key={ slug }>
               <div className="recent-listing-container">
                 <div className="recent-listing-img" data-aos="fade-up" data-aos-duration="1500">
-                  <Link href="/">
+                  { thumbnail ? 
+                  <Link href={`/property/${ slug }`}>
                     <a>
                       { <Image src={ thumbnail.data.attributes.url } alt="house" layout="fill"/> }
                     </a>
                   </Link>
+                  :                 
+                    <Link href={`/property/${ slug }`}>
+                    <a>
+                      { <Image src="/no_image.jpg" alt="house" layout="fill"/> }
+                    </a>
+                   </Link>
+                  }
                 </div>
                 <div className="recent-listing-info"  data-aos="fade-up" >
                   <p className="label">{ type == 'SingleFamily' ? 'Single-family' : type }</p>
@@ -143,7 +168,7 @@ export default function Home({ listingData, aboutData }) {
         <Testimonials />
 
         <section className="contact-section">
-          <section className="contact-section-container" data-aos="fade-in">
+          <div className="contact-section-container" data-aos="fade-in">
             <div className="header">
               <h1>Get in Touch</h1>
             </div>
@@ -154,7 +179,8 @@ export default function Home({ listingData, aboutData }) {
                 <img src="/r-arrow.svg" className="r-arrow" alt="right arrow" />
               </a>
             </Link>
-          </section>
+          </div>
+          <img src="/neighborhood_white.png" alt="" width="1000" className="neighborhood-img" />
         </section>
       </main>
     </div>

@@ -238,7 +238,8 @@
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  height: 75vh;
+  position: relative;
+  height: 600px;
   background: #BB3A3A;
 }
 
@@ -259,6 +260,16 @@
 .page-home .contact-section .line {
   background: white;
   margin: auto;
+}
+
+.page-home .contact-section .neighborhood-img {
+  position: absolute;
+  bottom: 1rem;
+}
+
+.page-home .contact-section-container {
+  margin-bottom: 5rem;
+  z-index: 1;
 }
 
 @media only screen and (min-width: 500px) {
@@ -363,7 +374,7 @@
     width: 100%;
   }
   .page-home .contact-section {
-    height: 700px;
+    height: 600px;
   }
 }
 

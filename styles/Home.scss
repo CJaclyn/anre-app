@@ -180,8 +180,8 @@
         justify-content: center;
         align-items: center;
         text-align: center;
-        
-        height: 75vh;
+        position: relative;
+        height: 600px;
         background: $primaryColor;
 
         h1 {
@@ -202,6 +202,16 @@
             background: white;
             margin: auto;
         }
+
+        .neighborhood-img {
+            position: absolute;
+            bottom: 1rem;
+        }
+    }
+
+    .contact-section-container {
+        margin-bottom: 5rem;
+        z-index: 1;
     }
 
 
@@ -321,7 +331,7 @@
         }
 
         .contact-section {
-            height: 700px;
+            height: 600px;
         }
     }
     

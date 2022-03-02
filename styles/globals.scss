@@ -231,6 +231,52 @@ header {
 }
 }
 
+.not-found {
+  min-height: 800px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: flex-end;
+
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: $sectionPadding;
+    padding-bottom: 1rem;
+    text-align: center;
+  }
+
+  h1 {
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.25rem;
+  }
+
+  header {
+    nav {
+      color: $primaryColor;
+    }
+
+    .fill {
+        fill: $primaryColor;
+    }
+
+    .stroke {
+        stroke: $primaryColor;
+    }
+  }
+}
+
 /**************************/
 /********* FOOTER *********/
 /**************************/
