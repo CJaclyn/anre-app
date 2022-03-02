@@ -4,7 +4,11 @@ import HeaderNav from '../components/HeaderNav'
 import { fetchAPI } from '../lib/api';
 
 export default function About ({ aboutData }) {
-    const about = aboutData['data'].attributes.content;
+    if(aboutData) {
+        var about = aboutData['data'].attributes.content;
+    }else {
+        var about = "An error occured, please check back later!"
+    }
 
     return (
         <div className="page-about">

@@ -1,5 +1,3 @@
-import Link from 'next/link'
-import Image from 'next/image'
 import ContactForm from '../components/ContactForm'
 import { Icon } from '@iconify/react'
 import HeaderNav from '../components/HeaderNav'

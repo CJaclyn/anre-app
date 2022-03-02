@@ -11,7 +11,7 @@ import '../styles/Nav.css'
 import '../styles/Contact.css'
 import '../styles/About.css'
 import "@fontsource/manrope"
-import Nav from '../Nav'
+import Nav from '../components/Nav'
 import Footer from '../Footer'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
