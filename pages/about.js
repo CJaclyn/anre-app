@@ -7,7 +7,7 @@ export default function About ({ aboutData }) {
     var about; 
 
     if (aboutData['data'] == null) {
-        about = "There was an error. Please check back later."
+        about = "There was an error. Please check back later.";
     }else {
         about = aboutData['data'].attributes.content;
     }

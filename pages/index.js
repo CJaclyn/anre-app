@@ -10,12 +10,12 @@ import { fetchAPI } from '../lib/api';
 
 export default function Home({ listingData, aboutData }) {
   const listings = listingData['data'];
-  const about = aboutData['data'].attributes.content;
   const listingCount = listings.length;
   const listing = [];
   listing.push(listings[listingCount-1].attributes)
   listing.push(listings[listingCount-2].attributes)
   const data = HeaderImages
+  var about; 
   const settings = {
     dots: false,
     infinite: true,
@@ -27,6 +27,12 @@ export default function Home({ listingData, aboutData }) {
     cssEase: "ease-in-out",
     arrows: false, 
     pauseOnHover: false,
+  }
+
+  if (aboutData['data'] == null) {
+    about = "There was an error. Please check back later.";
+  }else {
+      about = aboutData['data'].attributes.content;
   }
 
   return (
