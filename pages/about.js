@@ -4,10 +4,12 @@ import HeaderNav from '../components/HeaderNav'
 import { fetchAPI } from '../lib/api';
 
 export default function About ({ aboutData }) {
-    if(aboutData) {
-        var about = aboutData['data'].attributes.content;
+    var about; 
+
+    if (aboutData['data'] == null) {
+        about = "There was an error. Please check back later."
     }else {
-        var about = "An error occured, please check back later!"
+        about = aboutData['data'].attributes.content;
     }
 
     return (
