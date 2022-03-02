@@ -1,6 +1,4 @@
-import React, { useState } from 'react'
 import Link from 'next/link'
-import { Icon } from '@iconify/react'
 import Image from 'next/image'
 
 export default function Footer () {
@@ -34,7 +32,7 @@ export default function Footer () {
                     <h3>Contact</h3>
                     <p>Andy Nguyen Real Estate Inc.</p>
                     <p><a href="tel:+1123456789">(123) 456-789</a></p>
-                    <p><a href = "mailto: andynguyenrealestate@gmail.com">email@email.com</a></p>
+                    <p><a href = "mailto: andynguyenrealestate@gmail.com">andynguyenrealestate@gmail.com</a></p>
                 </div>
             </div>
             <div className="footer-bottom section">

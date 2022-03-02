@@ -38,6 +38,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   position: relative;
+  z-index: 1;
 }
 
 .page-contact .contact-left {

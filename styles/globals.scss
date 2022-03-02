@@ -96,6 +96,7 @@ a {
   font-size: 1rem;
   transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
   font-weight: 500;
+  cursor: pointer;
 
   &:hover {
     background: #ce0000;
@@ -201,6 +202,7 @@ header {
     top: 0;
     color: white;
     padding: 1rem 1.5rem;
+    z-index: 1;
 
     a {
         margin-right: 2rem;

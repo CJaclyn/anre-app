@@ -18,7 +18,7 @@ export default function Testimonials() {
     return (
         <section className="testimonials">
             <ImageSlider data={ ClientImages } />
-            <div className="testimonial-container" data-aos="fade-up">
+            <div className="testimonial-container" data-aos="fade-in">
                 <div className="header">
                     <h1>What Clients Have To Say</h1>
                     <p className="label">Testimonials</p>

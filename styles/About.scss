@@ -1,5 +1,176 @@
 @import 'variables';
 
 .page-about {
+    header {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
 
+        nav {
+            color: $primaryColor;
+        }
+
+        .fill {
+            fill: $primaryColor;
+        }
+
+        .stroke {
+            stroke: $primaryColor;
+        }
+    }
+
+    main {
+        position: relative;
+        height: auto;
+        overflow: hidden;
+        min-height: 100vh;
+    }
+
+    .about-content {
+        p {
+            font-size: 1rem;
+        }
+
+        .arrow-button {
+            background: none;
+            border: solid 1px $primaryColor;
+            color: $primaryColor;
+            width: 225px;
+        }
+    }
+
+    .portrait {
+        display: flex;
+        img {
+            width: 100%;
+            width: 400px;
+            filter: grayscale(100%);
+            transition: ease-in-out .1s;
+
+            &:hover {
+                filter: grayscale(0%);
+            }
+        }
+    }
+
+    .portrait-container {
+        overflow: hidden;
+    }
+    
+    .about-container {
+        padding: 0 1.5rem;
+        padding-top: 100px;
+    }
+
+    @media only screen and (min-width: 500px) {
+        .about-content {
+            width: 400px;
+            margin: 0 auto;
+        }
+    }
+
+    @media only screen and (min-width: 600px) {
+        .about-content {
+            width: 450px;
+        }
+    }
+
+    @media only screen and (min-width: 768px) {
+        main {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: row-reverse;
+            height: 1000px;
+        }
+
+        .about-container {
+            flex: 60%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .about-content {
+            width: 400px;
+        }
+        
+        .portrait-container {
+            flex: 40%;
+            height: 100%;
+        }
+
+        .portrait {
+            height: 100%;
+            align-items: flex-end;
+
+            img {
+                height: 700px;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 900px) {
+        .about-content {
+            width: 450px;
+        }
+    }
+
+    @media only screen and (min-width: 1024px) {
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row-reverse;
+        }
+
+        .portrait-container {
+
+            img {
+                height: 100%;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 1100px) {
+        .about-content {
+            width: 500px;
+        }
+    }
+
+    @media only screen and (min-width: 1368px) {
+        .portrait-container {
+            img {
+                height: 100%;
+                width: auto;
+            }
+        }
+
+        .about-container {
+            flex: 50%;
+        }
+        
+        .portrait-container {
+            flex: 50%;
+        }
+    }
+
+    @media only screen and (min-width: 1700px) {
+        main {
+            height: 100vh;
+        }
+        
+        .about-content {
+            margin: 0;
+            width: 650px;
+        }
+
+        .about-container {
+            justify-content: flex-start;
+        }
+    }
 }

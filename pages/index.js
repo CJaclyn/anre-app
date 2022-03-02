@@ -8,8 +8,9 @@ import { HeaderImages } from '../HeaderImages'
 import HeaderNav from '../components/HeaderNav'
 import { fetchAPI } from '../lib/api';
 
-export default function Home({ listingData }) {
+export default function Home({ listingData, aboutData }) {
   const listings = listingData['data'];
+  const about = aboutData['data'].attributes.content;
   const listingCount = listings.length;
   const listing = [];
   listing.push(listings[listingCount-1].attributes)
@@ -27,8 +28,6 @@ export default function Home({ listingData }) {
     arrows: false, 
     pauseOnHover: false,
   }
-
-  console.log(listing)
 
   return (
     <div className="page-home">
@@ -87,7 +86,7 @@ export default function Home({ listingData }) {
           <div className="about-container" data-aos="fade-in">
             <div className="about-portrait">
                 <Image 
-                  src="/portrait.png"
+                  src="/portrait_l.png"
                   alt="portrait of Andy Nguyen" 
                   layout="fill"
                 />
@@ -97,14 +96,8 @@ export default function Home({ listingData }) {
                   <h1>Andy Nguyen</h1>
                 </div>
                 <p className="label">Meet Andy</p>
-                <p>
-                  Core values: People-first, professionalism, communication
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                  Itaque voluptatem ipsum numquam et sit. Quisquam, quidem omnis? 
-                  Asperiores veniam placeat nobis assumenda provident, quo, 
-                  rerum officia eum soluta unde recusandae.
-                </p>
-                <Link href="/" >
+                <p>{ about.substring(0, 200) }...</p>
+                <Link href="/about" >
                   <a className="button">Learn more</a>
                 </Link>
             </div>
@@ -116,7 +109,7 @@ export default function Home({ listingData }) {
           {listing.map(({ slug, type, bed, bath, sqft, address, city, price, thumbnail, description }, index) => (
             <div className={`recent-listings-container house-${ index+1 }`}>
               <div className="recent-listing-container">
-                <div className="recent-listing-img" data-aos="flip-left" data-aos-duration="1500">
+                <div className="recent-listing-img" data-aos="fade-up" data-aos-duration="1500">
                   <Link href="/">
                     <a>
                       <Image src="/house2.jpg" alt="house" layout="fill"/>
@@ -124,12 +117,12 @@ export default function Home({ listingData }) {
                     </a>
                   </Link>
                 </div>
-                <div className="recent-listing-info" data-aos="fade-in" >
+                <div className="recent-listing-info"  data-aos="fade-up" >
                   <p className="label">{ type == 'SingleFamily' ? 'Single-family' : type }</p>
                   <h2 className="address">{ address }, { city }</h2>
                   <h2 className="price">${ price.toLocaleString() }</h2>
                   <p className="details">{ sqft } sqft · { bed } bed · { bath } bath</p>
-                  <p className="recent-listing-desc">{ description }</p>
+                  <p className="recent-listing-desc">{ description.substring(0, 200) }...</p>
                   <Link href={`/property/${ slug }`}>
                     <a className="basic-link">View house</a>
                   </Link>    
@@ -165,10 +158,12 @@ export default function Home({ listingData }) {
 
 export async function getStaticProps() {
   const listingData = await fetchAPI(`listings?populate=*`)
+  const aboutData = await fetchAPI(`about`)
 
   return {
     props: {
-      listingData
+      listingData,
+      aboutData
     },
     revalidate: 60
   }

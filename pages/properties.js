@@ -8,18 +8,18 @@ import { fetchAPI } from '../lib/api';
 
 export default function Properties({ listingData }) {
     const [filters, setFilters] = useState({
-        status: null,
-        city: null,
-        price: null,
-        type: null,
-        bedroom: null,
+        status: 'All',
+        city: 'Any',
+        price: '1000000000',
+        type: 'Any',
+        bedroom: '1',
     });
-
     const listings = listingData['data'];
     let listing = [];
     const cities = [];
     let result = listing
 
+    //Get listings and cities
     function getListings() {
       for(let i in listings) {            
         const listingCity = listings[i].attributes.city;
@@ -32,8 +32,10 @@ export default function Properties({ listingData }) {
 
     getListings();
     
+    //remove duplicates in city array
     const city = [...new Set(cities)];
 
+    //set filter values
     const handleChange = e => {
         const { name, value } = e.target
         setFilters({
@@ -41,8 +43,6 @@ export default function Properties({ listingData }) {
             [name]: value
         });
     }
-
-    console.log(filters)
 
     function filtering() {
         if (filters.status && filters.status != "All") {
@@ -73,8 +73,19 @@ export default function Properties({ listingData }) {
         return result;
     }
 
-    filtering()
-    console.log(result)
+    filtering();
+
+    function resetFilters() {
+        setFilters({
+            status: 'All',
+            city: 'Any',
+            price: '1000000000',
+            type: 'Any',
+            bedroom: '1',
+        })
+    
+        return result;
+    }
 
     return (
         <div className="page-properties">
@@ -91,108 +102,122 @@ export default function Properties({ listingData }) {
             </header>
             <div className="filters">
                 <form>
-                    <select 
-                        name="status" 
-                        onChange={ handleChange } 
-                        value={ filters.status } 
-                        aria-label="Filter property status">
-                        <option value="" disabled selected hidden>Status</option>
-                        <option value="ForSale">For sale</option>
-                        <option value="Sold">Sold</option>
-                        <option value="All">All</option>
-                    </select>
-                    <select 
-                        name="city" 
-                        onChange={ handleChange } 
-                        value={ filters.city }
-                        aria-label="Filter property city">
-                        <option value="" disabled selected hidden>City</option>
-                        {city.map((city, index) => (
-                            <option value={ city } key={ index }>{ city }</option>
-                        ))}
-                        <option value="Any">Any</option>
-                    </select>
-                    <select 
-                        name="price" 
-                        onChange={ handleChange } 
-                        value={ filters.price }
-                        aria-label="Filter property price">
-                        <option value="" disabled selected hidden>Price</option>
-                        <option value="250000">&#8804; $250,000</option>
-                        <option value="350000">&#8804; $350,000</option>
-                        <option value="450000">&#8804; $450,000</option>
-                        <option value="550000">&#8804; $550,000</option>
-                        <option value="750000">&#8804; $750,000</option>
-                        <option value="1000000000">Any</option>
-                    </select>
-                    <select 
-                        name="type" 
-                        onChange={ handleChange } 
-                        value={ filters.type }
-                        aria-label="Filter property type">
-                        <option value="" disabled selected hidden>Type</option>
-                        <option value="SingleFamily">Single-family</option>
-                        <option value="Condo">Condo</option>
-                        <option value="Townhouse">Townhouse</option>
-                        <option value="Any">Any</option>
-                    </select>
-                    <select 
-                        name="bedroom" 
-                        onChange={ handleChange } 
-                        value={ filters.bedroom }
-                        aria-label="Filter property bedroom">
-                        <option value="" disabled selected hidden>Bedroom</option>
-                        <option value="1">1+ Beds</option>
-                        <option value="2">2+ Beds</option>
-                        <option value="3">3+ Beds</option>
-                        <option value="4">4+ Beds</option>
-                    </select>
+                    <div className="filter-item">
+                        <label htmlFor="status">Status</label>
+                        <select 
+                            name="status" 
+                            onChange={ handleChange } 
+                            value={ filters.status } 
+                            aria-label="Filter property status">
+                            <option value="ForSale">For sale</option>
+                            <option value="Sold">Sold</option>
+                            <option value="All" selected>All</option>
+                        </select>
+                    </div>
+                    <div className="filter-item">
+                        <label htmlFor="city">City</label>
+                        <select 
+                            name="city" 
+                            onChange={ handleChange } 
+                            value={ filters.city }
+                            aria-label="Filter property city">
+
+                            {city.map((city, index) => (
+                                <option value={ city } key={ index }>{ city }</option>
+                            ))}
+                            <option value="Any" selected>Any</option>
+                        </select>
+                    </div>
+                    <div className="filter-item">
+                        <label htmlFor="price">Price</label>
+                        <select 
+                            name="price" 
+                            onChange={ handleChange } 
+                            value={ filters.price }
+                            aria-label="Filter property price">
+                            <option value="250000">&#8804; $250,000</option>
+                            <option value="350000">&#8804; $350,000</option>
+                            <option value="450000">&#8804; $450,000</option>
+                            <option value="550000">&#8804; $550,000</option>
+                            <option value="750000">&#8804; $750,000</option>
+                            <option value="1000000000" selected>Any</option>
+                        </select>
+                    </div>
+                    <div className="filter-item">
+                        <label htmlFor="type">Type</label>
+                        <select 
+                            name="type" 
+                            onChange={ handleChange } 
+                            value={ filters.type }
+                            aria-label="Filter property type">
+                            <option value="SingleFamily">Single-family</option>
+                            <option value="Condo">Condo</option>
+                            <option value="Townhouse">Townhouse</option>
+                            <option value="Any" selected>Any</option>
+                        </select>
+                    </div>
+                    <div className="filter-item">
+                        <label htmlFor="bedroom">Bed</label>
+                        <select 
+                            name="bedroom" 
+                            onChange={ handleChange } 
+                            value={ filters.bedroom }
+                            aria-label="Filter property bedroom">
+                            <option value="1" selected>1+ Beds</option>
+                            <option value="2">2+ Beds</option>
+                            <option value="3">3+ Beds</option>
+                            <option value="4">4+ Beds</option>
+                        </select>
+                    </div>
+                    <div className="filter-item">
+                        <a className="button" onClick={ resetFilters }>Reset filters</a>
+                    </div>
                 </form>
             </div>
             <main>
-            <p className="results-count">{ listing.length } Results</p>
-            {result.length == 0 ?
-            <div>
-                <p>No matching results. Clear your filters to see more homes.</p>
-            </div>
-            : result.map(({ slug, bed, bath, sqft, address, city, price, status, thumbnail }) => (
-                <Link href={`/property/${ slug }`} key={ slug } passHref>
-                    <a className="card">
-                        <div className="property-card">
-                            <div className="status-label">
-                                <p>{ status == 'ForSale' ? 'For Sale' : status }</p>
-                            </div>
-                            <div className="property-image">
-                                <Image 
-                                    src={ thumbnail.data.attributes.url }
-                                    alt="house thumbnail" 
-                                    layout="fill"
-                                />
-                            </div>
-                            <div className="property-info">
-                                <div className="property-top">
-                                    <p className="price">${ price.toLocaleString() }</p>
-                                    <p className="address">{ address }, { city }</p>
+                <p className="results-count">{ result.length } Results</p>
+                {result.length == 0 ?
+                <div>
+                    <p>No matching results. Change or reset the filters to see more homes.</p>
+                </div>
+                : result.map(({ slug, bed, bath, sqft, address, city, price, status, thumbnail }) => (
+                    <Link href={`/property/${ slug }`} key={ slug } passHref>
+                        <a className="card">
+                            <div className="property-card">
+                                <div className="status-label">
+                                    <p>{ status == 'ForSale' ? 'For Sale' : status }</p>
                                 </div>
-                                <div className="property-bottom">
-                                    <div className="sqft info">
-                                        <Icon icon="gis:square-pt" />
-                                        <p>{ sqft.toLocaleString() } sqft</p>
+                                <div className="property-image">
+                                    <Image 
+                                        src={ thumbnail.data.attributes.url }
+                                        alt="house thumbnail" 
+                                        layout="fill"
+                                    />
+                                </div>
+                                <div className="property-info">
+                                    <div className="property-top">
+                                        <p className="price">${ price.toLocaleString() }</p>
+                                        <p className="address">{ address }, { city }</p>
                                     </div>
-                                    <div className="bed info">
-                                        <Icon icon="bx:bx-bed" />
-                                        <p>{ bed } bed</p>
-                                    </div>
-                                    <div className="bath info">
-                                        <Icon icon="bx:bx-bath" />
-                                        <p>{ bath } bath</p>
+                                    <div className="property-bottom">
+                                        <div className="sqft info">
+                                            <Icon icon="gis:square-pt" />
+                                            <p>{ sqft.toLocaleString() } sqft</p>
+                                        </div>
+                                        <div className="bed info">
+                                            <Icon icon="bx:bx-bed" />
+                                            <p>{ bed } bed</p>
+                                        </div>
+                                        <div className="bath info">
+                                            <Icon icon="bx:bx-bath" />
+                                            <p>{ bath } bath</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </a>
-                </Link>
-            ))}
+                        </a>
+                    </Link>
+                ))}
             </main>
         </div>
     )
@@ -203,7 +228,7 @@ export async function getStaticProps() {
 
     return {
       props: {
-        listingData,
+        listingData
       },
       revalidate: 60
     }

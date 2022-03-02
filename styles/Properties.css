@@ -61,12 +61,16 @@
   padding: 1.5rem;
 }
 
-.page-properties form select, .page-properties form input {
+.page-properties form label {
+  font-size: .9rem;
+  margin-bottom: .25rem;
+}
+
+.page-properties form select {
   height: 50px;
   width: 100%;
   border: none;
   background: white;
-  margin-bottom: 1rem;
   font-size: 1rem;
   letter-spacing: .5px;
   color: #7a7a7a;
@@ -76,6 +80,10 @@
 
 .page-properties form select {
   cursor: pointer;
+}
+
+.page-properties form .filter-item {
+  margin-bottom: 1rem;
 }
 
 .page-properties form ::-webkit-input-placeholder {
@@ -221,26 +229,31 @@
   .page-properties .property-card {
     width: 400px;
   }
-  .page-properties .filters {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
   .page-properties .button {
     margin-top: 0;
     width: 150px;
   }
-  .page-properties form select, .page-properties form input {
+  .page-properties form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+  .page-properties form .filter-item {
     min-width: 150px;
     width: auto;
-    display: inline-block;
     margin-right: 1rem;
+  }
+  .page-properties form .button {
+    height: 50px;
   }
 }
 
@@ -270,8 +283,13 @@
   }
 }
 
-@media only screen and (min-width: 1144px) {
-  .page-properties form select, .page-properties form input {
+@media only screen and (min-width: 1070px) {
+  .page-properties form {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .page-properties form .filter-item {
     margin-bottom: 0;
   }
 }

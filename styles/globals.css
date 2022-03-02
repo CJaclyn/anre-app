@@ -107,6 +107,7 @@ a {
   -webkit-transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
   font-weight: 500;
+  cursor: pointer;
 }
 
 .button:hover {
@@ -221,6 +222,7 @@ header nav {
   top: 0;
   color: white;
   padding: 1rem 1.5rem;
+  z-index: 1;
 }
 
 header nav a {

@@ -21,7 +21,7 @@ export default function Contact () {
                 <div className="contact-container">
                     <div className="contact-left">
                         <div className="contact-left-container">
-                            <h1>Let's work together.</h1>
+                            <h1>Let's work together</h1>
                             <p>Send me a message and I&apos;ll get back to you as soon as possible.</p>
                             <div className="contact-info">
                                 <div className="item">

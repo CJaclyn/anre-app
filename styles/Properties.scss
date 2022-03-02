@@ -44,12 +44,16 @@
     form {
         padding: 1.5rem;
 
-        select, input {
+        label {
+            font-size: .9rem;
+            margin-bottom: .25rem;
+        }
+
+        select {
             height: 50px;
             width: 100%;
             border: none;
             background: white;
-            margin-bottom: 1rem;
             font-size: 1rem;
             letter-spacing: .5px;
             color: rgb(122, 122, 122);
@@ -59,6 +63,10 @@
     
         select {
             cursor: pointer;
+        }
+
+        .filter-item {
+            margin-bottom: 1rem;
         }
     
         ::placeholder {
@@ -169,23 +177,25 @@
             width: 400px;
         }
 
-        .filters {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
         .button {
             margin-top: 0;
             width: 150px;
         }
 
         form {
-            select, input {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: flex-end;
+
+            .filter-item {
                 min-width: 150px;
                 width: auto;
-                display: inline-block;
                 margin-right: 1rem;
+            }
+
+            .button {
+                height: 50px;
             }
         }
     }
@@ -216,9 +226,11 @@
         }
     }
 
-    @media only screen and (min-width: 1144px) {
+    @media only screen and (min-width: 1070px) {
         form {
-            select, input {
+            justify-content: center;
+
+            .filter-item {
                 margin-bottom: 0;
             }
         }
