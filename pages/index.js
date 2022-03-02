@@ -136,13 +136,13 @@ export default function Home({ listingData, aboutData }) {
                   { thumbnail ? 
                   <Link href={`/property/${ slug }`}>
                     <a>
-                      { <Image src={ thumbnail.data.attributes.url } alt="house" layout="fill"/> }
+                      { <Image src={ thumbnail.data.attributes.url } alt="house thumbnail" layout="fill"/> }
                     </a>
                   </Link>
                   :                 
                     <Link href={`/property/${ slug }`}>
                     <a>
-                      { <Image src="/no_image.jpg" alt="house" layout="fill"/> }
+                      { <Image src="/no_image.jpg" alt="no image" layout="fill"/> }
                     </a>
                    </Link>
                   }

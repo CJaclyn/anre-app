@@ -34,7 +34,7 @@ export default function Nav () {
         <nav className="main-nav">           
             <div className="nav-container" style={ navStyle }>
                 <div className="anre-logo">
-                    <Link href="/">
+                    <Link href="/" passHref>
                         <svg width="80.218mm" height="35.566mm" version="1.1" viewBox="0 0 80.218 35.566" xmlns="http://www.w3.org/2000/svg" xmlnscc="http://creativecommons.org/ns#" xmlnsdc="http://purl.org/dc/elements/1.1/" xmlnsrdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
                             <g transform="translate(-71.424 -36.611)">
                             <g fill="#BB3A3A" strokeWidth=".1" className="fill">

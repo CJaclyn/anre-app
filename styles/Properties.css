@@ -27,7 +27,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   width: 100%;
-  height: 400px;
+  height: 300px;
   background: url("/properties.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -258,6 +258,9 @@
 }
 
 @media only screen and (min-width: 768px) {
+  .page-properties header {
+    height: 400px;
+  }
   .page-properties header h1 {
     font-size: 3rem;
   }
