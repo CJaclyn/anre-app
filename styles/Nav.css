@@ -88,9 +88,6 @@
   right: 1rem;
   margin-right: 0;
   font-size: 2.5rem;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
 }
 
 .main-nav .exit-icon {
@@ -124,10 +121,11 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: white;
+  margin-right: 0;
 }
 
 .main-nav .mobile-nav-items a {
@@ -137,6 +135,16 @@
 
 .main-nav .mobile-top {
   text-align: right;
+  height: 90px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
 }
 
 @media only screen and (min-width: 768px) {

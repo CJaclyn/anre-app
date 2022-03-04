@@ -67,7 +67,7 @@
     right: 1rem;
     margin-right: 0;
     font-size: 2.5rem;
-    width: max-content;
+    //position: absolute;
   }
 
   //x icon to close mobile menu
@@ -96,8 +96,9 @@
   .mobile-nav-items {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     color: white;
+    margin-right: 0;
 
     a {
       font-size: 2.75rem;
@@ -107,6 +108,10 @@
 
   .mobile-top {
     text-align: right;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
   }
 
   @media only screen and (min-width: 768px) {
