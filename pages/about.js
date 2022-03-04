@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import Head from 'next/head'
-import HeaderNav from '../components/HeaderNav'
 import { fetchAPI } from '../lib/api';
 
 export default function About ({ aboutData }) {
@@ -20,9 +19,6 @@ export default function About ({ aboutData }) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main>
-                <header>
-                    <HeaderNav />
-                </header>
                 <div className="about-container">
                     <div className="about-content" data-aos="slide-up">
                         <p className="label">About</p>
@@ -41,7 +37,6 @@ export default function About ({ aboutData }) {
                         <img src="/portrait.png" alt="portrait of Andy Nguyen" />
                     </div>
                 </div>
-
             </main>
         </div>
     )

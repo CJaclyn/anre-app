@@ -20,6 +20,20 @@
         }
     }
 
+    .main-nav {
+        a {
+            color: $primaryColor;
+        }
+
+        .fill {
+            fill: $primaryColor;
+        }
+
+        .stroke {
+            stroke: $primaryColor;
+        }
+    }
+
     main {
         position: relative;
         height: auto;

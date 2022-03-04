@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import ContactForm from '../../components/ContactForm'
 import { Icon } from '@iconify/react';
-import HeaderNav from '../../components/HeaderNav';
 import { fetchAPI } from "../../lib/api";
 import ImageGallery from 'react-image-gallery';
 
@@ -42,7 +41,6 @@ export default function Property ({ listingData, listingImages }) {
             <main>
                 <header className="property-images">
                     <ImageGallery items={ slideshow }/>
-                    <HeaderNav />
                 </header>
                 <div className="main-container">
                     <div className="property-information">

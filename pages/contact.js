@@ -1,6 +1,5 @@
 import ContactForm from '../components/ContactForm'
 import { Icon } from '@iconify/react'
-import HeaderNav from '../components/HeaderNav'
 import Head from 'next/head'
 
 export default function Contact () {
@@ -11,9 +10,6 @@ export default function Contact () {
                 <meta name="description" content="Contact Andy Nguyen Real Estate" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <header>
-                <HeaderNav />
-            </header>
             <main>
                 <div className="background"></div>
                 <div className="contact-container">
@@ -24,7 +20,7 @@ export default function Contact () {
                             <div className="contact-info">
                                 <div className="item">
                                     <Icon icon="akar-icons:phone" color="white" />
-                                    <a href="tel:+4733378901">(123) 123-1234</a>
+                                    <a href="tel:+16513594137">(651) 359-4137</a>
                                 </div>
                                 <div className="item">
                                     <Icon icon="carbon:email" color="white" />

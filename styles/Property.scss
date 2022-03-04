@@ -148,6 +148,11 @@
         }
     }
 
+    .fact {
+        display: flex;
+        align-items: center;
+    }
+
     .contact-form-top {
         width: 300px;
     }
@@ -183,6 +188,7 @@
         .label {
             margin-top: 0;
             font-size: 1.4rem;
+            letter-spacing: 2px;
         }
     }
 

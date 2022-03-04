@@ -1,39 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&display=swap");
-.cursor {
-  z-index: 9999;
-  position: fixed;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  width: 20px;
-  height: 20px;
-  background: #BB3A3A;
-  border-radius: 100%;
-  pointer-events: none;
-  -webkit-transition: all .25s ease;
-  transition: all .25s ease;
-  opacity: 1;
-  mix-blend-mode: difference;
-  -webkit-transition-property: background-color, opacity, mix-blend-mode, -webkit-transform;
-  transition-property: background-color, opacity, mix-blend-mode, -webkit-transform;
-  transition-property: background-color, opacity, transform, mix-blend-mode;
-  transition-property: background-color, opacity, transform, mix-blend-mode, -webkit-transform;
-}
-
-.cursor--hidden {
-  opacity: 0;
-}
-
-.cursor--link-hovered {
-  -webkit-transform: translate(-50%, -50%) scale(2.5);
-          transform: translate(-50%, -50%) scale(2.5);
-  background: rgba(255, 255, 255, 0.8);
-}
-
-.cursor--clicked {
-  -webkit-transform: translate(-50%, -50%) scale(1);
-          transform: translate(-50%, -50%) scale(1);
-}
-
 html,
 body {
   padding: 0;

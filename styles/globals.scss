@@ -1,33 +1,5 @@
 @import 'variables';
 
-.cursor {
-  z-index: 9999;
-  position: fixed;
-  transform: translate(-50%, -50%);
-  width: 20px;
-  height: 20px;
-  background: $primaryColor;
-  border-radius: 100%;
-  pointer-events: none;
-  transition: all .25s ease;
-  opacity: 1;
-  mix-blend-mode: difference;
-  transition-property: background-color, opacity, transform, mix-blend-mode;
-}
-
-.cursor--hidden {
-  opacity: 0;
-}
-
-.cursor--link-hovered {
-  transform: translate(-50%, -50%) scale(2.5);
-  background: rgba($color: white, $alpha: .8)
-}
-
-.cursor--clicked {
-  transform: translate(-50%, -50%) scale(1);
-}
-
 html,
 body {
   padding: 0;

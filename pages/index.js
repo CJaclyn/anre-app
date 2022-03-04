@@ -5,7 +5,6 @@ import Testimonials from '../Testimonials'
 import { Icon } from '@iconify/react'
 import Slider from "react-slick";
 import { HeaderImages } from '../HeaderImages'
-import HeaderNav from '../components/HeaderNav'
 import { fetchAPI } from '../lib/api';
 
 export default function Home({ listingData, aboutData }) {
@@ -40,7 +39,7 @@ export default function Home({ listingData, aboutData }) {
     listing.push(listings[0].attributes)
   }else {
     listing = [{
-      slug: '/',
+      slug: '',
       type: 'N/A',
       bed: 0,
       bath: 0,
@@ -77,7 +76,6 @@ export default function Home({ listingData, aboutData }) {
             )})}
           </Slider>
         </div>
-        <HeaderNav />
         <div className="header-main" data-aos="fade-in" data-aos-duration="1750">
           <p className="welcome">Welcome to</p>
           <h1>Andy Nguyen Real Estate</h1>
@@ -115,10 +113,10 @@ export default function Home({ listingData, aboutData }) {
                 />
             </div>
             <div className="about-desc">
+                <p className="label">About</p>
                 <div className="header">
-                  <h1>Andy Nguyen</h1>
+                  <h1>Meet Andy</h1>
                 </div>
-                <p className="label">Meet Andy</p>
                 <p>{ about.substring(0, 200) }...</p>
                 <Link href="/about" >
                   <a className="button">Learn more</a>
@@ -134,17 +132,9 @@ export default function Home({ listingData, aboutData }) {
               <div className="recent-listing-container">
                 <div className="recent-listing-img" data-aos="fade-up" data-aos-duration="1500">
                   { thumbnail ? 
-                  <Link href={`/property/${ slug }`}>
-                    <a>
-                      { <Image src={ thumbnail.data.attributes.url } alt="house thumbnail" layout="fill"/> }
-                    </a>
-                  </Link>
+                      <>{ <Image src={ thumbnail.data.attributes.url } alt="house thumbnail" layout="fill"/> }</>
                   :                 
-                    <Link href={`/property/${ slug }`}>
-                    <a>
-                      { <Image src="/no_image.jpg" alt="no image" layout="fill"/> }
-                    </a>
-                   </Link>
+                      <>{ <Image src="/no_image.jpg" alt="no image" layout="fill"/> }</>
                   }
                 </div>
                 <div className="recent-listing-info"  data-aos="fade-up" >
@@ -188,7 +178,7 @@ export default function Home({ listingData, aboutData }) {
 }
 
 export async function getStaticProps() {
-  const listingData = await fetchAPI(`listings?populate=*`)
+  const listingData = await fetchAPI(`listings?sort[0]=id:asc&populate=*`)
   const aboutData = await fetchAPI(`about`)
 
   return {

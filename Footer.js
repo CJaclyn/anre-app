@@ -31,7 +31,7 @@ export default function Footer () {
                 <div className="contact-info sub-section">
                     <h3>Contact</h3>
                     <p>Andy Nguyen Real Estate Inc.</p>
-                    <p><a href="tel:+1123456789">(123) 456-789</a></p>
+                    <p><a href="tel:+16513594137">(651) 359-4137</a></p>
                     <p><a href = "mailto: andynguyenrealestate@gmail.com">andynguyenrealestate@gmail.com</a></p>
                 </div>
             </div>

@@ -94,7 +94,6 @@ export default function ContactForm () {
 
     return (
         <form id="contact-form" className="contact-form-input" onSubmit={ sendEmail }>
-            { successMessage() }
             <div className="form-item">
                 <label htmlFor="fullname">Full name</label>
                 <input 
@@ -136,6 +135,7 @@ export default function ContactForm () {
                     required />
                 <p className="error-msg">{ errors.message }</p>
             </div>
+            { successMessage() }
             <button className="button">Send</button>
         </form>
     )

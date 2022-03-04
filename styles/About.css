@@ -18,6 +18,18 @@
   stroke: #BB3A3A;
 }
 
+.page-about .main-nav a {
+  color: #BB3A3A;
+}
+
+.page-about .main-nav .fill {
+  fill: #BB3A3A;
+}
+
+.page-about .main-nav .stroke {
+  stroke: #BB3A3A;
+}
+
 .page-about main {
   position: relative;
   height: auto;

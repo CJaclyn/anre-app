@@ -3,7 +3,6 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link';
 import { Icon } from '@iconify/react';
-import HeaderNav from '../components/HeaderNav';
 import { fetchAPI } from '../lib/api';
 
 export default function Properties({ listingData }) {
@@ -98,7 +97,6 @@ export default function Properties({ listingData }) {
             <header>
                 <h1>Properties</h1>
                 <div className="background"></div>
-                <HeaderNav />
             </header>
             <div className="filters">
                 <form>
@@ -224,7 +222,7 @@ export default function Properties({ listingData }) {
 }
 
 export async function getStaticProps() {
-    const listingData = await fetchAPI(`listings?populate=*`)
+    const listingData = await fetchAPI(`listings?sort[0]=id:desc&populate=*`)
 
     return {
       props: {

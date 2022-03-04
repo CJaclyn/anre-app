@@ -1,12 +1,8 @@
 import Link from 'next/link'
-import HeaderNav from '../components/HeaderNav'
 
 export default function Custom404() {
     return (
         <div className="not-found">
-            <header>
-                <HeaderNav />
-            </header>
             <main>
                 <h1>You&apos;re away from home.</h1>
                 <h2>404</h2>
