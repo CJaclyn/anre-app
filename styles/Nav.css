@@ -108,6 +108,8 @@
           transition-timing-function: ease-in-out;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  -ms-touch-action: none;
+      touch-action: none;
 }
 
 .main-nav .mobile-nav a {

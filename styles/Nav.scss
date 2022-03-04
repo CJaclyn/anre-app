@@ -88,6 +88,7 @@
     background: $primaryColor;
     transition-timing-function: ease-in-out;
     transition: 0.5s;
+    touch-action: none;
 
     a {
       display: block;
