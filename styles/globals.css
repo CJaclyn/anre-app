@@ -18,7 +18,6 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   overflow: hidden;
-  position: fixed;
   width: 100%;
   height: 100%;
 }
