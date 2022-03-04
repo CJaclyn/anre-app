@@ -70,8 +70,9 @@
 
 .main-nav .anre-logo svg {
   cursor: pointer;
-  width: 100px;
+  width: 125px;
   height: 100%;
+  margin-bottom: 1rem;
 }
 
 .main-nav .anre-logo svg .fill {
@@ -84,8 +85,6 @@
 
 .main-nav .mobile-nav-icon {
   cursor: pointer;
-  top: 1rem;
-  right: 1rem;
   margin-right: 0;
   font-size: 2.5rem;
 }
