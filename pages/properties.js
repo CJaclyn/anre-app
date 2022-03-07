@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import Head from 'next/head'
+import PageHead from '../components/PageHead';
 import Image from 'next/image'
 import Link from 'next/link';
 import { Icon } from '@iconify/react';
 import { fetchAPI } from '../lib/api';
 
-export default function Properties({ listingData }) {
+export default function Properties({ listingData}) {
     const [filters, setFilters] = useState({
         status: 'All',
         city: 'Any',
@@ -16,7 +16,7 @@ export default function Properties({ listingData }) {
     const listings = listingData['data'];
     let listing = [];
     const cities = [];
-    let result = listing
+    let result = listing;
 
     //Get listings and cities
     function getListings() {
@@ -88,11 +88,10 @@ export default function Properties({ listingData }) {
 
     return (
         <div className="page-properties">
-            <Head>
-                <title>Properties | Andy Nguyen Real Estate</title>
-                <meta name="description" content="Andy Nguyen real estate agent in Minnesota. Homes for sale in Minnesota." />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
+            <PageHead 
+                title="Homes for Sale in Minnesota | Andy Nguyen Real Estate"
+                description="Homes for sale in Minnesota with Andy Nguyen Real Estate."
+            />
 
             <header>
                 <h1>Properties</h1>
@@ -222,11 +221,27 @@ export default function Properties({ listingData }) {
 }
 
 export async function getStaticProps() {
-    const listingData = await fetchAPI(`listings?sort[0]=id:desc&populate=*`)
+    var qs = require('qs');
+
+    const query = qs.stringify({
+        // pagination: { 
+        //     start: 0, //pagination[start]=#
+        //     limit: 4, //pagination[limit]=#
+        //     // page: 1, //pagination[page]=#
+        //     // pageSize: 4,
+        // },
+        sort: ['id:desc'], //sort[0]=id:desc
+        populate: '*', //populate=*
+    }, {
+        encodeValuesOnly: true,
+    });
+
+    const listingData = await fetchAPI(`listings?${query}`)
+
 
     return {
       props: {
-        listingData
+        listingData,
       },
       revalidate: 60
     }

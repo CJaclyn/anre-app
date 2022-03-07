@@ -83,6 +83,8 @@
 
     //fullscreen mode
     .fullscreen {
+        z-index: 1;
+        
         .image-gallery-slides {
             height: 100vh;
             width: fit-content;

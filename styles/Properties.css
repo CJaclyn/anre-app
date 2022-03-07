@@ -292,7 +292,7 @@
   }
 }
 
-@media only screen and (min-width: 1070px) {
+@media only screen and (min-width: 1088px) {
   .page-properties form {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -303,12 +303,18 @@
   }
 }
 
+@media only screen and (min-width: 1200px) {
+  .page-properties main {
+    width: 1071px;
+  }
+}
+
 @media only screen and (min-width: 1368px) {
   .page-properties header h1 {
     font-size: 3.5rem;
   }
   .page-properties main {
-    min-width: 1146px;
+    width: 1146px;
   }
   .page-properties .property-card {
     width: 350px;
@@ -323,7 +329,7 @@
     font-size: 4rem;
   }
   .page-properties main {
-    min-width: 1512px;
+    width: 1512px;
   }
 }
 /*# sourceMappingURL=Properties.css.map */

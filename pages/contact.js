@@ -1,15 +1,14 @@
 import ContactForm from '../components/ContactForm'
 import { Icon } from '@iconify/react'
-import Head from 'next/head'
+import PageHead from '../components/PageHead'
 
 export default function Contact () {
     return (
         <div className="page-contact">
-            <Head>
-                <title>Contact | Andy Nguyen Real Estate</title>
-                <meta name="description" content="Contact Andy Nguyen Real Estate" />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
+            <PageHead 
+                title="Contact | Andy Nguyen Real Estate"
+                description="Contact Andy Nguyen Real Estate with any of your real estate needs or questions."
+            />
             <main>
                 <div className="background"></div>
                 <div className="contact-container">

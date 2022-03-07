@@ -85,6 +85,10 @@
   color: #BB3A3A;
 }
 
+.page-property .fullscreen {
+  z-index: 1;
+}
+
 .page-property .fullscreen .image-gallery-slides {
   height: 100vh;
   width: -webkit-fit-content;

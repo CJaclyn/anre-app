@@ -3,6 +3,7 @@ import ContactForm from '../../components/ContactForm'
 import { Icon } from '@iconify/react';
 import { fetchAPI } from "../../lib/api";
 import ImageGallery from 'react-image-gallery';
+import PageHead from '../../components/PageHead';
 
 export default function Property ({ listingData, listingImages }) {
     const listing = listingData['data'][0].attributes;
@@ -34,10 +35,10 @@ export default function Property ({ listingData, listingImages }) {
 
     return (
         <div className="page-property">
-            <Head>
-                <title>{ listing.address }, { listing.city }, MN { listing.zipcode } | Andy Nguyen Real Estate</title>
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
+            <PageHead 
+                title={`${ listing.address }, ${ listing.city }, MN ${ listing.zipcode } | Andy Nguyen Real Estate`}
+                description={ listing.description }
+            />
             <main>
                 <header className="property-images">
                     <ImageGallery items={ slideshow }/>
@@ -47,7 +48,7 @@ export default function Property ({ listingData, listingImages }) {
                         <div className="property-intro">
                             <p className="label">{ listing.status == 'ForSale' ? 'For Sale' : listing.status }</p>
                             <h1 className="address">{ listing.address }, { listing.city }, MN { listing.zipcode }</h1>
-                            <p className="description">{ listing.description }</p>
+                            <p className="description">{ listing.description == null ? "No description available." : listing.description }</p>
                         </div>
                         <div className="property-facts">
                             <h2>Property Details</h2>

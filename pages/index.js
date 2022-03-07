@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 import Testimonials from '../Testimonials'
@@ -6,6 +5,7 @@ import { Icon } from '@iconify/react'
 import Slider from "react-slick";
 import { HeaderImages } from '../HeaderImages'
 import { fetchAPI } from '../lib/api';
+import PageHead from '../components/PageHead'
 
 export default function Home({ listingData, aboutData }) {
   const listings = listingData['data'];
@@ -53,12 +53,10 @@ export default function Home({ listingData, aboutData }) {
 
   return (
     <div className="page-home">
-      <Head>
-        <title>Andy Nguyen Real Estate</title>
-        <meta name="description" content="Andy Nguyen real estate agent in Minnesota" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
+      <PageHead 
+        title="Andy Nguyen Real Estate | Realtor in Minnesota"
+        description="Find your new home today! Buy or sell a home with Andy Nguyen Real Estate in Minnesota."
+      />
       <header>
         <div className="background">
           <Slider {...settings}>
@@ -126,7 +124,7 @@ export default function Home({ listingData, aboutData }) {
         </section>
 
         <section className="recent-listings" data-aos="fade-in">
-          <h1>Recent Homes</h1>
+          <h1>Recent Listings</h1>
           {listing.map(({ slug, type, bed, bath, sqft, address, city, price, thumbnail, description }, index) => (
             <div className={`recent-listings-container house-${ index+1 }`} key={ slug }>
               <div className="recent-listing-container">

@@ -230,13 +230,19 @@
         }
     }
 
-    @media only screen and (min-width: 1070px) {
+    @media only screen and (min-width: 1088px) {
         form {
             justify-content: center;
 
             .filter-item {
                 margin-bottom: 0;
             }
+        }
+    }
+
+    @media only screen and (min-width: 1200px) {
+        main {
+            width: 1071px;
         }
     }
 
@@ -248,7 +254,7 @@
         }
         
         main {
-            min-width: 1146px;
+            width: 1146px;
         }
 
         .property-card {
@@ -268,7 +274,7 @@
         }
 
         main {
-            min-width: 1512px;
+            width: 1512px;
         }
     }
 }

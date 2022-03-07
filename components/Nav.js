@@ -48,7 +48,7 @@ export default function Nav () {
     }
 
     //change nav colors only on about page
-    if(router.pathname === "/about") {
+    if(router.pathname === "/about" || router.pathname === "/404") {
         navStyle = {
             color: "#BB3A3A",
         }

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Head from 'next/head'
+import PageHead from '../components/PageHead';
 import { fetchAPI } from '../lib/api';
 
 export default function About ({ aboutData }) {
@@ -13,11 +13,10 @@ export default function About ({ aboutData }) {
 
     return (
         <div className="page-about">
-            <Head>
-                <title>About | Andy Nguyen Real Estate</title>
-                <meta name="description" content="About Andy Nguyen real estate agent in Minnesota." />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
+            <PageHead 
+                title="About | Andy Nguyen Real Estate"
+                description={ about }
+            />
             <main>
                 <div className="about-container">
                     <div className="about-content" data-aos="slide-up">
