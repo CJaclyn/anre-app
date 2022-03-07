@@ -144,9 +144,13 @@
   letter-spacing: 1px;
 }
 
+.page-properties .card {
+  width: 312px;
+  margin: auto;
+}
+
 .page-properties .property-card {
   height: auto;
-  width: 100%;
   margin-bottom: 1rem;
   position: relative;
 }
@@ -232,7 +236,7 @@
 }
 
 @media only screen and (min-width: 500px) {
-  .page-properties .property-card {
+  .page-properties .card {
     width: 400px;
   }
   .page-properties .button {
@@ -280,7 +284,7 @@
     width: 730px;
     margin-right: -1rem;
   }
-  .page-properties .property-card {
+  .page-properties .card {
     width: 325px;
     margin-right: 1rem;
   }
@@ -316,7 +320,7 @@
   .page-properties main {
     width: 1146px;
   }
-  .page-properties .property-card {
+  .page-properties .card {
     width: 350px;
   }
   .page-properties .property-image {

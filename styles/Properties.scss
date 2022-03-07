@@ -106,9 +106,13 @@
         }
     }
 
+    .card {
+        width: 312px;
+        margin: auto;
+    }
+
     .property-card {
         height: auto;
-        width: 100%;
         margin-bottom: 1rem;
         position: relative;
 
@@ -175,7 +179,7 @@
     }
 
     @media only screen and (min-width: 500px) {
-        .property-card {
+        .card {
             width: 400px;
         }
 
@@ -218,7 +222,7 @@
             margin-right: -1rem;
         }
 
-        .property-card {
+        .card {
             width: 325px;
             margin-right: 1rem;
         }
@@ -257,7 +261,7 @@
             width: 1146px;
         }
 
-        .property-card {
+        .card {
             width: 350px;
         }
 
