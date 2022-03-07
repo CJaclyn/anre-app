@@ -10,9 +10,8 @@ export default function Property ({ listingData, listingImages }) {
 
     if(listing.image.data !== null) {
         const imageArray = listingImages['data'][0].attributes.photos['data'];
-        var image = [];
         var slideshow = [];
-    
+
         function getImages() {
             for(let i in imageArray) {
                 slideshow[i] = {
@@ -20,7 +19,14 @@ export default function Property ({ listingData, listingImages }) {
                     thumbnail: imageArray[i].attributes.url
                 }
             }
-            return image, slideshow;
+
+            //add the thumbnail/cover image at the front of the slideshow
+            slideshow.unshift({
+                original: listing.thumbnail.data.attributes.url,
+                thumbnail: listing.thumbnail.data.attributes.url
+            })
+
+            return slideshow;
         }
         getImages();
     }else {
@@ -32,6 +38,8 @@ export default function Property ({ listingData, listingImages }) {
             }
         ];
     }
+
+    console.log(slideshow)
 
     return (
         <div className="page-property">
