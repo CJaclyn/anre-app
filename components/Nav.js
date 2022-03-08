@@ -32,7 +32,6 @@ export default function Nav () {
 
     const navStyle = {
         position: scrolled === true ? 'fixed' : 'absolute',
-        color: scrolled === true ? '#BB3A3A' : 'white',
         background: scrolled === true ? 'white' : 'none',
         borderBottom: scrolled === true ? 'rgb(226, 226, 226) solid 1px' : 'none',
         padding: scrolled === true ? '.1rem 1.5rem' : ''
@@ -50,6 +49,7 @@ export default function Nav () {
     if(router.pathname === "/about" || router.pathname === "/404") {
         var linkStyle = {
             color: "#BB3A3A",
+            color: scrolled === true ? '#BB3A3A' : '',
         }
         
         fill = {
