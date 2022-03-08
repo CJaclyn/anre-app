@@ -8,8 +8,6 @@ export default function Nav () {
     const [scrolled, setScrolled] = useState(false);
     const [showMenu, setShowMenu] = useState(false);
     const router = useRouter();
-    var fill = {};
-    var stroke = {};
 
     const handleScroll = () => {
         const offset = window.pageYOffset;
@@ -37,26 +35,32 @@ export default function Nav () {
         padding: scrolled === true ? '.1rem 1.5rem' : ''
     }
 
-    fill = {
+    var linkStyle = {
+        color: scrolled === true ? '#BB3A3A' : '',
+    }
+
+    var fill = {
         fill: scrolled === true ? "#BB3A3A" : "white"
     }
 
-    stroke = {
+    var stroke = {
         stroke: scrolled === true ? "#BB3A3A" : "white"
     }
 
     //change nav colors only on about page
     if(router.pathname === "/about" || router.pathname === "/404") {
-        var linkStyle = {
+         linkStyle = {
+            color: scrolled === true ? '#BB3A3A' : 'white',
             color: "#BB3A3A",
-            color: scrolled === true ? '#BB3A3A' : '',
         }
         
         fill = {
+            fill: scrolled === true ? "#BB3A3A" : "white",
             fill: "#BB3A3A"
         }
 
         stroke = {
+            stroke: scrolled === true ? "#BB3A3A" : "white",
             stroke: "#BB3A3A"
         }
     }
@@ -127,6 +131,7 @@ export default function Nav () {
                     <Icon 
                         icon={ menuAlt3 } 
                         className="mobile-nav-icon"
+                        style={ linkStyle }
                         onClick={ () => setShowMenu(!showMenu) }
                     />
                 </div>
