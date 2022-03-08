@@ -8,7 +8,6 @@ export default function Nav () {
     const [scrolled, setScrolled] = useState(false);
     const [showMenu, setShowMenu] = useState(false);
     const router = useRouter();
-    var navStyle = {};
     var fill = {};
     var stroke = {};
 
@@ -31,7 +30,7 @@ export default function Nav () {
         visibility: showMenu === true ? 'visible' : 'hidden'
     }
 
-    navStyle = {
+    const navStyle = {
         position: scrolled === true ? 'fixed' : 'absolute',
         color: scrolled === true ? '#BB3A3A' : 'white',
         background: scrolled === true ? 'white' : 'none',
@@ -49,7 +48,7 @@ export default function Nav () {
 
     //change nav colors only on about page
     if(router.pathname === "/about" || router.pathname === "/404") {
-        navStyle = {
+        var linkStyle = {
             color: "#BB3A3A",
         }
         
@@ -106,22 +105,23 @@ export default function Nav () {
                 <div className="nav-right">
                     <div className="nav-links">
                         <Link href="/">
-                            <a className="nav-link">Home</a>
+                            <a className="nav-link" style={ linkStyle }>Home</a>
                         </Link>
                         <Link href="/properties">
-                            <a className="nav-link">Properties</a>
+                            <a className="nav-link" style={ linkStyle }>Properties</a>
                         </Link>
                         <Link href="/about">
-                            <a className="nav-link">About</a>
+                            <a className="nav-link" style={ linkStyle }>About</a>
                         </Link>
                         <Link href="/contact">
-                            <a className="nav-link contact">Contact</a>
+                            <a className="nav-link contact" style={ linkStyle }>Contact</a>
                         </Link>
                         <a 
                         href="https://www.facebook.com/pages/category/Real-Estate-Agent/Andy-Nguyen-Real-Estate-Inc-102133454501876/" 
                         target="_blank"
                         rel="noreferrer"
                         className="nav-link"
+                        style={ linkStyle }
                         ><Icon icon="brandico:facebook" /></a>
                     </div>
                     <Icon 
