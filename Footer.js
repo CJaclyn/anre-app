@@ -41,7 +41,7 @@ export default function Footer () {
                     target="_blank"
                     rel="noreferrer">Facebook
                 </a></p>
-                <p>Privacy Policy</p>
+                <p><Link href="/privacy">Privacy Policy</Link></p>
                 <p>©2022 Andy Nguyen Real Estate Inc.</p>
             </div>
         </footer>

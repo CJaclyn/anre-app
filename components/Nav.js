@@ -48,7 +48,7 @@ export default function Nav () {
     }
 
     //change nav colors only on about page
-    if(router.pathname === "/about" || router.pathname === "/404") {
+    if(router.pathname === "/about" || router.pathname === "/404" || router.pathname === "/privacy") {
          linkStyle = {
             color: scrolled === true ? '#BB3A3A' : 'white',
             color: "#BB3A3A",

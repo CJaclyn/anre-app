@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import Link from 'next/link';
 import PageHead from '../components/PageHead';
 import { fetchAPI } from '../lib/api';
 

@@ -39,8 +39,6 @@ export default function Property ({ listingData, listingImages }) {
         ];
     }
 
-    console.log(slideshow)
-
     return (
         <div className="page-property">
             <PageHead 

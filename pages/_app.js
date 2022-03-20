@@ -10,6 +10,7 @@ import '../styles/Property.css'
 import '../styles/Nav.css'
 import '../styles/Contact.css'
 import '../styles/About.css'
+import '../styles/Privacy.css'
 import "@fontsource/manrope"
 import Nav from '../components/Nav'
 import Footer from '../Footer'
