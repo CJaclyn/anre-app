@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap");
 .page-contact header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -19,13 +19,7 @@
 }
 
 .page-contact main {
-  background: url("/contact.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   height: auto;
-  padding-top: 100px;
-  padding-bottom: 3rem;
   position: relative;
 }
 
@@ -52,14 +46,19 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 2rem 1.5rem;
-  width: 100%;
-  height: auto;
+  padding: 0 1.5rem;
   position: relative;
   z-index: 2;
+  height: 600px;
+  width: 100%;
+  background: url("/contact.jpg");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.page-contact .contact-left h1, .page-contact .contact-left p {
+.page-contact .contact-left h1,
+.page-contact .contact-left p {
   position: relative;
   color: white;
 }
@@ -84,17 +83,17 @@
 }
 
 .page-contact .background {
-  background: rgba(0, 0, 0, 0.15);
+  background: rgba(0, 0, 0, 0.5);
   width: 100%;
   height: 100%;
   position: absolute;
   left: 0;
   top: 0;
-  z-index: 1;
+  z-index: 0;
 }
 
-.page-contact .contact-form-container {
-  padding: 2rem 1.5rem;
+.page-contact .contact-right {
+  padding: 0 1.5rem;
   z-index: 2;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -103,36 +102,73 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 750px;
 }
 
-.page-contact .contact-form h2, .page-contact .contact-form p, .page-contact .contact-form label {
-  color: white;
-}
-
-.page-contact .contact-form p, .page-contact .contact-form label {
+.page-contact .contact-form p {
   font-size: 1rem;
 }
 
 .page-contact .contact-form label {
-  font-weight: bold;
+  display: inline;
+  color: white;
+  color: #474747;
 }
 
-.page-contact form input, .page-contact form textarea {
+.page-contact form {
+  border-radius: 5px;
+  position: relative;
+}
+
+.page-contact form input,
+.page-contact form textarea {
   padding: 1.25rem 1rem;
 }
 
-.page-contact form input, .page-contact form textarea {
+.page-contact form input,
+.page-contact form textarea {
   border: none;
-  background: rgba(255, 255, 255, 0.616);
+  border: 1px #d1d1d1 solid;
+  border-radius: 5px;
+}
+
+.page-contact form h2 {
+  color: #bb3a3a;
+  letter-spacing: 2px;
+  margin: 0;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+
+.page-contact form .button {
+  width: 175px;
+  width: 100%;
+}
+
+.page-contact .error-msg {
+  color: red;
+  margin-left: 0.5rem;
+  display: none;
+}
+
+.page-contact .message {
+  padding: 0.25rem 0.75rem;
+}
+
+.page-contact .message p {
+  line-height: normal;
+  color: white;
 }
 
 .page-contact .success-message {
-  background: #BB3A3A;
-  padding: .25rem .75rem;
+  background: green;
 }
 
-.page-contact .success-message p {
-  line-height: normal;
+.page-contact .error-message {
+  background: red;
 }
 
 .page-contact .contact-left .iconify {
@@ -144,34 +180,29 @@
 }
 
 @media only screen and (min-width: 500px) {
-  .page-contact .contact-form, .page-contact .contact-left {
+  .page-contact .contact-left-container,
+  .page-contact .contact-form form {
     width: 400px;
     margin: 0 auto;
-  }
-  .page-contact .contact-left {
-    padding: 2rem 0;
-  }
-}
-
-@media only screen and (min-width: 600px) {
-  .page-contact .contact-form, .page-contact .contact-left {
-    width: 500px;
   }
 }
 
 @media only screen and (min-width: 768px) {
+  .page-contact .contact-left-container {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+  }
   .page-contact .contact-left-container h1 {
     font-size: 3rem;
   }
-  .page-contact .contact-left .contact-info svg, .page-contact .contact-left .contact-info a {
+  .page-contact .contact-left .contact-info svg,
+  .page-contact .contact-left .contact-info a {
     display: inline;
     vertical-align: middle;
   }
   .page-contact .contact-left .contact-info svg {
     margin-right: 1rem;
-  }
-  .page-contact main {
-    padding-top: 150px;
   }
 }
 
@@ -182,18 +213,25 @@
         -ms-flex-direction: row;
             flex-direction: row;
   }
-  .page-contact .contact-form-container {
+  .page-contact .contact-left,
+  .page-contact .contact-right {
+    -webkit-box-flex: 50%;
+        -ms-flex: 50%;
+            flex: 50%;
     padding: 0;
-    padding-right: 5rem;
+  }
+  .page-contact .contact-left-container,
+  .page-contact .contact-form form {
+    margin: 0;
+  }
+  .page-contact .contact-right {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-  }
-  .page-contact .contact-form, .page-contact .contact-left {
-    padding: 0;
+    height: 750px;
   }
   .page-contact .contact-left {
     display: -webkit-box;
@@ -206,9 +244,7 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    -webkit-box-pack: initial;
-        -ms-flex-pack: initial;
-            justify-content: initial;
+    height: auto;
   }
   .page-contact .contact-left-container {
     width: 350px;
@@ -216,29 +252,16 @@
   .page-contact .contact-left-container h1 {
     font-size: 3.5rem;
   }
-  .page-contact .contact-form {
-    width: 400px;
-  }
 }
 
 @media only screen and (min-width: 1368px) {
-  .page-contact main {
-    padding-top: 200px;
-  }
-  .page-contact .contact-form {
-    width: 500px;
-  }
-  .page-contact .contact-form-container {
+  .page-contact .contact-right {
     margin: auto;
   }
-  .page-contact .contact-left {
-    margin-right: -2rem;
-  }
   .page-contact .contact-left-container {
-    width: 450px;
-  }
-  .page-contact .contact-left-container h1 {
-    font-size: 4rem;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
   }
 }
 
@@ -246,13 +269,23 @@
   .page-contact main {
     height: 100vh;
   }
-  .page-contact .contact-left-container {
+  .page-contact .contact-right {
+    height: 100vh;
+  }
+  .page-contact .contact-right form {
     width: 500px;
   }
-  .page-contact .contact-left-container h1 {
-    font-size: 5rem;
+  .page-contact .contact-right form h2 {
+    font-size: 3rem;
   }
-  .page-contact .contact-left-container p, .page-contact .contact-left-container a {
+  .page-contact .contact-left {
+    height: 100vh;
+  }
+  .page-contact .contact-left-container h1 {
+    font-size: 4rem;
+  }
+  .page-contact .contact-left-container p,
+  .page-contact .contact-left-container a {
     font-size: 1.25rem;
   }
 }

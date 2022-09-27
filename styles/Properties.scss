@@ -1,283 +1,290 @@
 @import 'variables';
 
 .page-properties {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 300px;
+    background: url('/properties.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+    position: relative;
 
-    header {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 300px;
-        background: url('/properties.jpg');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        z-index: 1;
-        position: relative;
-
-        h1 {
-            color: white;
-            font-size: 1.5rem;
-            text-transform: uppercase;
-            font-weight: 700;
-            letter-spacing: 1rem;
-        }
-
-        .background {
-            background: rgba(0, 0, 0, 0.25);
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            z-index: -1;
-        }
+    h1 {
+      color: white;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 1rem;
     }
 
-    .filters {
-        width: 100%;
-        background: $secondaryColor;
+    .background {
+      background: rgba(0, 0, 0, 0.25);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: -1;
+    }
+  }
+
+  .filters {
+    width: 100%;
+    background: $secondaryColor;
+  }
+
+  form {
+    padding: 1.5rem;
+
+    label {
+      font-size: 0.9rem;
+      margin-bottom: 0.25rem;
+    }
+
+    select {
+      height: 50px;
+      width: 100%;
+      border: none;
+      background: white;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+      color: rgb(122, 122, 122);
+      padding: 0.5rem 1rem;
+      font-family: $primaryFont;
+    }
+
+    select {
+      cursor: pointer;
+    }
+
+    .filter-item {
+      margin-bottom: 1rem;
+    }
+
+    ::placeholder {
+      color: rgb(122, 122, 122);
+      opacity: 1;
+    }
+  }
+
+  .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: $sectionPadding;
+    position: relative;
+  }
+
+  .results-count {
+    position: absolute;
+    top: 0;
+    font-size: 0.9rem;
+  }
+
+  .status-label {
+    position: absolute;
+    top: 1rem;
+    background: rgba(0, 0, 0, 0.603);
+    z-index: 1;
+    width: 125px;
+    padding: 0.1rem 0;
+
+    p {
+      color: white;
+      font-weight: 500;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
+
+  .card {
+    width: 312px;
+  }
+
+  .property-card {
+    height: auto;
+    margin-bottom: 1rem;
+    position: relative;
+
+    p {
+      margin: 0;
+      font-size: 1rem;
+    }
+  }
+
+  .property-image {
+    position: relative;
+    height: 175px;
+
+    img {
+      object-fit: cover;
+      transition: ease-in-out 0.3s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .property-info {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border: solid 1px rgb(219, 219, 219);
+    border-top: none;
+  }
+
+  .property-top {
+    border-bottom: solid 1px rgb(219, 219, 219);
+    padding: 0.5rem;
+  }
+
+  .price {
+    font-size: 1.3rem !important;
+  }
+
+  .property-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    .iconify,
+    p {
+      display: inline;
+    }
+
+    .iconify {
+      margin-right: 0.5rem;
+    }
+  }
+
+  .info {
+    padding: 0.25rem 0.5rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .bed {
+    border-left: solid 1px rgb(219, 219, 219);
+    border-right: solid 1px rgb(219, 219, 219);
+  }
+
+  @media only screen and (min-width: 500px) {
+    .card {
+      width: 400px;
+    }
+
+    .button {
+      margin-top: 0;
+      width: 150px;
     }
 
     form {
-        padding: 1.5rem;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: flex-end;
 
-        label {
-            font-size: .9rem;
-            margin-bottom: .25rem;
-        }
+      .filter-item {
+        min-width: 150px;
+        width: auto;
+        margin-right: 1rem;
+      }
 
-        select {
-            height: 50px;
-            width: 100%;
-            border: none;
-            background: white;
-            font-size: 1rem;
-            letter-spacing: .5px;
-            color: rgb(122, 122, 122);
-            padding: .5rem 1rem;
-            font-family: $primaryFont;
-        }
-    
-        select {
-            cursor: pointer;
-        }
+      .button {
+        height: 50px;
+      }
+    }
+  }
 
-        .filter-item {
-            margin-bottom: 1rem;
-        }
-    
-        ::placeholder {
-            color: rgb(122, 122, 122);
-            opacity: 1;
-        }
+  @media only screen and (min-width: 768px) {
+    header {
+      height: 400px;
+
+      h1 {
+        font-size: 3rem;
+      }
     }
 
     main {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: $sectionPadding;
-        position: relative;
-    }
-
-    .results-count {
-        position: absolute;
-        top: 0;
-        font-size: .9rem;
-    }
-
-    .status-label {
-        position: absolute;
-        top: 1rem;
-        background: rgba(0, 0, 0, 0.603);
-        z-index: 1;
-        width: 125px;
-        padding: .1rem 0;
-
-        p {
-            color: white;
-            font-weight: 500;
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 730px;
+      margin-right: -1rem;
     }
 
     .card {
-        width: 312px;
+      width: 325px;
+      margin-right: 1rem;
+    }
+  }
+
+  @media only screen and (min-width: 1246px) {
+    main {
+      min-width: 1071px;
+    }
+  }
+
+  @media only screen and (min-width: 1088px) {
+    form {
+      justify-content: center;
+
+      .filter-item {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 1200px) {
+    main {
+      width: 1071px;
+    }
+  }
+
+  @media only screen and (min-width: 1368px) {
+    header {
+      h1 {
+        font-size: 3.5rem;
+      }
     }
 
-    .property-card {
-        height: auto;
-        margin-bottom: 1rem;
-        position: relative;
+    main {
+      width: 1146px;
+    }
 
-        p {
-            margin: 0;
-            font-size: 1rem;
-        }
+    .card {
+      width: 350px;
     }
 
     .property-image {
-        position: relative;
-        height: 175px;
+      height: 175px;
+    }
+  }
 
-        img {
-            object-fit: cover;
-            transition: ease-in-out .3s;
-
-            &:hover {
-                transform: scale(1.1);
-            }
-        }
+  @media only screen and (min-width: 1920px) {
+    header {
+      h1 {
+        font-size: 4rem;
+      }
     }
 
-    .property-info {
-        display: flex;
-        flex-direction: column;
-        background: white;
-        border: solid 1px rgb(219, 219, 219);
-        border-top: none;
+    main {
+      width: 1512px;
     }
-
-    .property-top {
-        border-bottom: solid 1px rgb(219, 219, 219);
-        padding: .5rem;
-    }
-
-    .price {
-        font-size: 1.3rem !important;
-    }
-
-    .property-bottom {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-
-        .iconify, p {
-            display: inline;
-        }
-
-        .iconify {
-            margin-right: .5rem;
-        }
-    }
-
-    .info {
-        padding: .25rem .5rem;
-        display: flex;
-        align-items: center;
-    }
-
-    .bed {
-        border-left: solid 1px rgb(219, 219, 219);
-        border-right: solid 1px rgb(219, 219, 219);
-    }
-
-    @media only screen and (min-width: 500px) {
-        .card {
-            width: 400px;
-        }
-
-        .button {
-            margin-top: 0;
-            width: 150px;
-        }
-
-        form {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            align-items: flex-end;
-
-            .filter-item {
-                min-width: 150px;
-                width: auto;
-                margin-right: 1rem;
-            }
-
-            .button {
-                height: 50px;
-            }
-        }
-    }
-
-    @media only screen and (min-width: 768px) {
-        header {
-            height: 400px;
-
-            h1 {
-                font-size: 3rem;
-            }
-        }
-
-        main {
-            flex-direction: row;
-            flex-wrap: wrap;
-            width: 730px;
-            margin-right: -1rem;
-        }
-
-        .card {
-            width: 325px;
-            margin-right: 1rem;
-        }
-    }
-
-    @media only screen and (min-width: 1246px) {
-        main {
-            min-width: 1071px;
-        }
-    }
-
-    @media only screen and (min-width: 1088px) {
-        form {
-            justify-content: center;
-
-            .filter-item {
-                margin-bottom: 0;
-            }
-        }
-    }
-
-    @media only screen and (min-width: 1200px) {
-        main {
-            width: 1071px;
-        }
-    }
-
-    @media only screen and (min-width: 1368px) {
-        header {
-            h1 {
-                font-size: 3.5rem;
-            }
-        }
-        
-        main {
-            width: 1146px;
-        }
-
-        .card {
-            width: 350px;
-        }
-
-        .property-image {
-            height: 175px;
-        }
-    }
-
-    @media only screen and (min-width: 1920px) {
-        header {
-            h1 {
-                font-size: 4rem;
-            }
-        }
-
-        main {
-            width: 1512px;
-        }
-    }
+  }
 }

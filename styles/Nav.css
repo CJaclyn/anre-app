@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap");
 /******************************/
 /********* NAVIGATION *********/
 /******************************/
@@ -20,8 +20,8 @@
   z-index: 9999;
   color: white;
   padding: 1rem 1.5rem;
-  -webkit-transition: ease-in-out .4s;
-  transition: ease-in-out .4s;
+  -webkit-transition: ease-in-out 0.4s;
+  transition: ease-in-out 0.4s;
 }
 
 .main-nav .nav-right {
@@ -64,8 +64,8 @@
           justify-content: space-between;
   width: 100%;
   height: 90px;
-  -webkit-transition: .25s ease-in-out;
-  transition: .25s ease-in-out;
+  -webkit-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
 }
 
 .main-nav .anre-logo svg {
@@ -101,7 +101,7 @@
   width: 100%;
   height: 100%;
   padding: 1rem 1.5rem;
-  background: #BB3A3A;
+  background: #bb3a3a;
   -webkit-transition-timing-function: ease-in-out;
           transition-timing-function: ease-in-out;
   -webkit-transition: 0.5s;
@@ -131,7 +131,7 @@
 
 .main-nav .mobile-nav-items a {
   font-size: 2.75rem;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 .main-nav .mobile-top {
@@ -152,7 +152,8 @@
   .main-nav {
     padding-top: 2rem;
   }
-  .main-nav .mobile-nav-icon, .main-nav .mobile-nav {
+  .main-nav .mobile-nav-icon,
+  .main-nav .mobile-nav {
     display: none;
   }
   .main-nav .nav-links {
@@ -164,8 +165,7 @@
             align-items: center;
   }
   .main-nav .nav-link {
-    margin-right: 1rem;
-    padding: .5rem 1rem;
+    margin-right: 1.25rem;
   }
 }
 

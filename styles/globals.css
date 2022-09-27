@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap");
 html,
 body {
   padding: 0;
@@ -24,20 +24,27 @@ body {
 
 h1 {
   font-size: 2.5rem;
-  font-family: "Manrope", sans-serif;
   letter-spacing: 2px;
   display: inline-block;
   margin: 0;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-weight: 500;
   color: #474747;
 }
 
-p, a, label {
+p,
+a,
+label {
+  letter-spacing: 0.5px;
+}
+
+p,
+a {
   font-size: 1.1rem;
-  letter-spacing: .5px;
 }
 
 h3 {
@@ -61,11 +68,11 @@ a {
 
 .button {
   display: inline-block;
-  background: #BB3A3A;
+  background: #bb3a3a;
   border: none;
   color: white;
   width: 200px;
-  padding: .75rem 0;
+  padding: 0.75rem 0;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -75,6 +82,7 @@ a {
   transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
   font-weight: 500;
   cursor: pointer;
+  font-family: "Manrope", sans-serif;
 }
 
 .button:hover {
@@ -87,11 +95,11 @@ button {
 
 .basic-link {
   display: inline-block;
-  color: #BB3A3A;
-  border: solid 1px #BB3A3A;
+  color: #bb3a3a;
+  border: solid 1px #bb3a3a;
   width: 175px;
   text-align: center;
-  padding: .75rem 0;
+  padding: 0.75rem 0;
   letter-spacing: 1px;
   font-size: 1rem;
   text-transform: uppercase;
@@ -103,7 +111,7 @@ button {
 }
 
 .arrow-button img {
-  margin-left: .75rem;
+  margin-left: 0.75rem;
   width: 23px;
   height: auto;
   -webkit-transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -125,20 +133,27 @@ button {
 
 .label {
   font-weight: 500;
-  color: #BB3A3A;
+  color: #bb3a3a;
   margin: 1rem 0;
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
 }
 
-label, input, textarea {
+label,
+input,
+textarea {
   display: block;
   width: 100%;
   text-align: left;
 }
 
-input, textarea {
-  font-size: 1.1rem;
+input,
+textarea {
   font-family: "Manrope", sans-serif;
+}
+
+input,
+textarea {
+  font-size: 1rem;
   border: solid 1px #dbdbdb;
   color: #474747;
 }
@@ -155,6 +170,15 @@ input {
   margin-bottom: 0;
 }
 
+.required {
+  color: red;
+  font-weight: bold;
+}
+
+.required-notice {
+  font-size: 1rem;
+}
+
 .card {
   cursor: pointer;
 }
@@ -164,7 +188,6 @@ input {
 }
 
 .error-msg {
-  font-size: .9rem !important;
   color: grey;
   margin: 0;
   text-align: left;
@@ -268,15 +291,15 @@ header .anre-logo svg {
 }
 
 .not-found header nav {
-  color: #BB3A3A;
+  color: #bb3a3a;
 }
 
 .not-found header .fill {
-  fill: #BB3A3A;
+  fill: #bb3a3a;
 }
 
 .not-found header .stroke {
-  stroke: #BB3A3A;
+  stroke: #bb3a3a;
 }
 
 /**************************/
@@ -293,13 +316,15 @@ footer {
   border-top: solid 1px #dbdbdb;
 }
 
-footer p, footer a, footer h2 {
+footer p,
+footer a,
+footer h2 {
   margin: initial;
 }
 
 footer h3 {
   margin: 1rem 0;
-  color: #BB3A3A;
+  color: #bb3a3a;
 }
 
 footer .logos {
@@ -352,8 +377,9 @@ footer .sitemap a {
   padding: 1rem;
 }
 
-.footer-bottom p, .footer-bottom a {
-  font-size: .9rem;
+.footer-bottom p,
+.footer-bottom a {
+  font-size: 0.9rem;
 }
 
 @media only screen and (min-width: 768px) {

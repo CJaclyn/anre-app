@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap");
 .page-about header {
   position: absolute;
   width: 100%;
@@ -7,27 +7,27 @@
 }
 
 .page-about header nav {
-  color: #BB3A3A;
+  color: #bb3a3a;
 }
 
 .page-about header .fill {
-  fill: #BB3A3A;
+  fill: #bb3a3a;
 }
 
 .page-about header .stroke {
-  stroke: #BB3A3A;
+  stroke: #bb3a3a;
 }
 
 .page-about .main-nav a {
-  color: #BB3A3A;
+  color: #bb3a3a;
 }
 
 .page-about .main-nav .fill {
-  fill: #BB3A3A;
+  fill: #bb3a3a;
 }
 
 .page-about .main-nav .stroke {
-  stroke: #BB3A3A;
+  stroke: #bb3a3a;
 }
 
 .page-about main {
@@ -43,8 +43,8 @@
 
 .page-about .about-content .arrow-button {
   background: none;
-  border: solid 1px #BB3A3A;
-  color: #BB3A3A;
+  border: solid 1px #bb3a3a;
+  color: #bb3a3a;
   width: 225px;
 }
 
@@ -59,8 +59,8 @@
   width: 400px;
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
-  -webkit-transition: ease-in-out .1s;
-  transition: ease-in-out .1s;
+  -webkit-transition: ease-in-out 0.1s;
+  transition: ease-in-out 0.1s;
 }
 
 .page-about .portrait img:hover {

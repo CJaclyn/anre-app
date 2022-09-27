@@ -1,17 +1,17 @@
-import Link from 'next/link'
-import Image from 'next/image'
-import Testimonials from '../Testimonials'
-import { Icon } from '@iconify/react'
-import Slider from "react-slick";
-import { HeaderImages } from '../HeaderImages'
+import Link from 'next/link';
+import Image from 'next/image';
+import Testimonials from '../components/Testimonials';
+import { Icon } from '@iconify/react';
+import Slider from 'react-slick';
+import { HeaderImages } from '../HeaderImages';
 import { fetchAPI } from '../lib/api';
-import PageHead from '../components/PageHead'
+import PageHead from '../components/PageHead';
 
 export default function Home({ listingData, aboutData }) {
   const listings = listingData['data'];
   var listing = [];
-  const data = HeaderImages
-  var about; 
+  const data = HeaderImages;
+  var about;
   const settings = {
     dots: false,
     infinite: true,
@@ -20,170 +20,230 @@ export default function Home({ listingData, aboutData }) {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3250,
-    cssEase: "ease-in-out",
-    arrows: false, 
+    cssEase: 'ease-in-out',
+    arrows: false,
     pauseOnHover: false,
-  }
+  };
 
   if (aboutData['data'] == null) {
-    about = "There was an error. Please check back later";
-  }else {
-      about = aboutData['data'].attributes.content;
+    about = 'There was an error. Please check back later';
+  } else {
+    about = aboutData['data'].attributes.content;
   }
 
-  if(listings !== null && listings.length >= 2) {
+  if (listings !== null && listings.length >= 2) {
     var listingCount = listings.length;
-    listing.push(listings[listingCount-1].attributes)
-    listing.push(listings[listingCount-2].attributes)
-  }else if(listings !== null && listings.length == 1) {
-    listing.push(listings[0].attributes)
-  }else {
-    listing = [{
-      slug: '',
-      type: 'N/A',
-      bed: 0,
-      bath: 0,
-      city: 'N/A',
-      address: 'N/A',
-      price: 0,
-      sqft: 0,
-      description: 'There was an error, please check back later'
-    }]
+    listing.push(listings[listingCount - 1].attributes);
+    listing.push(listings[listingCount - 2].attributes);
+  } else if (listings !== null && listings.length == 1) {
+    listing.push(listings[0].attributes);
+  } else {
+    listing = [
+      {
+        slug: '',
+        type: 'N/A',
+        bed: 0,
+        bath: 0,
+        city: 'N/A',
+        address: 'N/A',
+        price: 0,
+        sqft: 0,
+        description: 'There was an error, please check back later',
+      },
+    ];
   }
 
   return (
-    <div className="page-home">
-      <PageHead 
-        title="Andy Nguyen Real Estate | Realtor in Minnesota"
-        description="Find your new home today! Buy or sell a home with Andy Nguyen Real Estate in Minnesota."
+    <div className='page-home'>
+      <PageHead
+        title='Andy Nguyen Real Estate | Realtor in Minnesota'
+        description='Find your new home today! Buy or sell a home with Andy Nguyen Real Estate in Minnesota.'
       />
       <header>
-        <div className="background">
+        <div className='background'>
           <Slider {...settings}>
-          {data.map((slide, index) => {
-          return (
-              <div className="header-img" key={ index }>
-                  <Image 
-                      src={ slide }
-                      layout="fill"
-                      objectFit="cover"
-                      alt={`house ${index + 1}`}
-                      className="image"
+            {data.map((slide, index) => {
+              return (
+                <div className='header-img' key={index}>
+                  <Image
+                    src={slide}
+                    layout='fill'
+                    objectFit='cover'
+                    alt={`house ${index + 1}`}
+                    className='image'
                   />
-              </div>
-            )})}
+                </div>
+              );
+            })}
           </Slider>
         </div>
-        <div className="header-main" data-aos="fade-in" data-aos-duration="1750">
-          <p className="welcome">Welcome to</p>
+        <div
+          className='header-main'
+          data-aos='fade-in'
+          data-aos-duration='1750'
+        >
+          <p className='welcome'>Welcome to</p>
           <h1>Andy Nguyen Real Estate</h1>
           <h2>Real Estate Agent in Minnesota.</h2>
-          <div className="header-buttons">
-            <Link href="/contact">
-              <a className="button">
-                Contact
-              </a>
+          <div className='header-buttons'>
+            <Link href='/contact'>
+              <a className='button'>Contact</a>
             </Link>
-            <Link href="/properties">
-              <a className="button arrow-button">
+            <Link href='/properties'>
+              <a className='button arrow-button'>
                 Properties
-                <img src="/r-arrow.svg" className="r-arrow" alt="right arrow" />
+                <img src='/r-arrow.svg' className='r-arrow' alt='right arrow' />
               </a>
             </Link>
           </div>
         </div>
-        <div className="scroll-down">
-          <div className="scroll-down-container">
+        <div className='scroll-down'>
+          <div className='scroll-down-container'>
             <p>Scroll Down</p>
-            <Icon icon="dashicons:arrow-down" color="white" />
+            <Icon icon='dashicons:arrow-down' color='white' />
           </div>
         </div>
       </header>
 
       <main>
-        <section className="about" id="about">
-          <div className="about-container" data-aos="fade-in">
-            <div className="about-portrait">
-                <Image 
-                  src="/portrait_l.png"
-                  alt="portrait of Andy Nguyen" 
-                  layout="fill"
-                />
+        <section className='about' id='about'>
+          <div className='about-container' data-aos='fade-in'>
+            <div className='about-portrait'>
+              <Image
+                src='/portrait_l.png'
+                alt='portrait of Andy Nguyen'
+                layout='fill'
+              />
             </div>
-            <div className="about-desc">
-                <p className="label">About</p>
-                <div className="header">
-                  <h1>Meet Andy</h1>
-                </div>
-                <p>{ about.substring(0, 200) }...</p>
-                <Link href="/about" >
-                  <a className="button">Learn more</a>
-                </Link>
+            <div className='about-desc'>
+              <p className='label'>About</p>
+              <div className='header'>
+                <h1>Meet Andy</h1>
+              </div>
+              <p>{about.substring(0, 200)}...</p>
+              <Link href='/about'>
+                <a className='button'>Learn more</a>
+              </Link>
             </div>
           </div>
         </section>
 
-        <section className="recent-listings" data-aos="fade-in">
+        <section className='recent-listings' data-aos='fade-in'>
           <h1>Recent Listings</h1>
-          {listing.map(({ slug, type, bed, bath, sqft, address, city, price, thumbnail, description }, index) => (
-            <div className={`recent-listings-container house-${ index+1 }`} key={ slug }>
-              <div className="recent-listing-container">
-                <div className="recent-listing-img" data-aos="fade-up" data-aos-duration="1500">
-                  { thumbnail ? 
-                      <>{ <Image src={ thumbnail.data.attributes.url } alt="house thumbnail" layout="fill"/> }</>
-                  :                 
-                      <>{ <Image src="/no_image.jpg" alt="no image" layout="fill"/> }</>
-                  }
+          {listing.map(
+            (
+              {
+                slug,
+                type,
+                bed,
+                bath,
+                sqft,
+                address,
+                city,
+                price,
+                thumbnail,
+                description,
+              },
+              index
+            ) => (
+              <div
+                className={`recent-listings-container house-${index + 1}`}
+                key={slug}
+              >
+                <div className='recent-listing-container'>
+                  <div
+                    className='recent-listing-img'
+                    data-aos='fade-up'
+                    data-aos-duration='1500'
+                  >
+                    {thumbnail ? (
+                      <>
+                        {
+                          <Image
+                            src={thumbnail.data.attributes.url}
+                            alt='house thumbnail'
+                            layout='fill'
+                          />
+                        }
+                      </>
+                    ) : (
+                      <>
+                        {
+                          <Image
+                            src='/no_image.jpg'
+                            alt='no image'
+                            layout='fill'
+                          />
+                        }
+                      </>
+                    )}
+                  </div>
+                  <div className='recent-listing-info' data-aos='fade-up'>
+                    <p className='label'>
+                      {type == 'SingleFamily' ? 'Single-family' : type}
+                    </p>
+                    <h2 className='address'>
+                      {address}, {city}
+                    </h2>
+                    <h2 className='price'>${price.toLocaleString()}</h2>
+                    <p className='details'>
+                      {sqft} sqft · {bed} bed · {bath} bath
+                    </p>
+                    <p className='recent-listing-desc'>
+                      {description.substring(0, 200)}...
+                    </p>
+                    <Link href={`/property/${slug}`}>
+                      <a className='basic-link'>View house</a>
+                    </Link>
+                  </div>
                 </div>
-                <div className="recent-listing-info"  data-aos="fade-up" >
-                  <p className="label">{ type == 'SingleFamily' ? 'Single-family' : type }</p>
-                  <h2 className="address">{ address }, { city }</h2>
-                  <h2 className="price">${ price.toLocaleString() }</h2>
-                  <p className="details">{ sqft } sqft · { bed } bed · { bath } bath</p>
-                  <p className="recent-listing-desc">{ description.substring(0, 200) }...</p>
-                  <Link href={`/property/${ slug }`}>
-                    <a className="basic-link">View house</a>
-                  </Link>    
-                </div>
-              </div>  
-            </div>
-          ))}
-          <Link href="/properties">
-            <a className="button">All Properties</a>
-          </Link>    
+              </div>
+            )
+          )}
+          <Link href='/properties'>
+            <a className='button'>All Properties</a>
+          </Link>
         </section>
 
         <Testimonials />
 
-        <section className="contact-section">
-          <div className="contact-section-container" data-aos="fade-in">
-            <div className="header">
+        <section className='contact-section'>
+          <div className='contact-section-container' data-aos='fade-in'>
+            <div className='header'>
               <h1>Get in Touch</h1>
             </div>
-            <p>Here to make your process of buying or selling a house as easy as possible.</p>
-            <Link href="/contact">
-              <a className="button arrow-button">
+            <p>
+              Here to make your process of buying or selling a house as easy as
+              possible.
+            </p>
+            <Link href='/contact'>
+              <a className='button arrow-button'>
                 Contact
-                <img src="/r-arrow.svg" className="r-arrow" alt="right arrow" />
+                <img src='/r-arrow.svg' className='r-arrow' alt='right arrow' />
               </a>
             </Link>
           </div>
-          <img src="/neighborhood_white.png" alt="" width="1000" className="neighborhood-img" />
+          <img
+            src='/neighborhood_white.png'
+            alt=''
+            width='1000'
+            className='neighborhood-img'
+          />
         </section>
       </main>
     </div>
-  )
+  );
 }
 
 export async function getStaticProps() {
-  const listingData = await fetchAPI(`listings?sort[0]=id:asc&populate=*`)
-  const aboutData = await fetchAPI(`about`)
+  const listingData = await fetchAPI(`listings?sort[0]=id:asc&populate=*`);
+  const aboutData = await fetchAPI(`about`);
 
   return {
     props: {
       listingData,
-      aboutData
+      aboutData,
     },
-    revalidate: 60
-  }
+    revalidate: 60,
+  };
 }

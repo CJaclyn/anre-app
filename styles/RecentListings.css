@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap");
 .recent-listings {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -65,8 +65,8 @@
 .recent-listing-img img {
   -o-object-fit: cover;
      object-fit: cover;
-  -webkit-transition: ease-in-out .3s;
-  transition: ease-in-out .3s;
+  -webkit-transition: ease-in-out 0.3s;
+  transition: ease-in-out 0.3s;
 }
 
 .recent-listing-img img:hover {
@@ -75,7 +75,7 @@
 }
 
 .details {
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
 
 .recent-listing-info {

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap");
 @-webkit-keyframes down {
   0% {
     top: 0;
@@ -78,7 +78,7 @@
 .page-home header .scroll-down p {
   margin: 0;
   text-transform: uppercase;
-  font-size: .9rem;
+  font-size: 0.9rem;
   letter-spacing: 1.5px;
 }
 
@@ -95,7 +95,9 @@
           animation-timing-function: ease-in-out;
 }
 
-.page-home header h1, .page-home header h2, .page-home header p {
+.page-home header h1,
+.page-home header h2,
+.page-home header p {
   color: white;
 }
 
@@ -108,7 +110,7 @@
 
 .page-home header h2 {
   font-size: 1.1rem;
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
   margin: 0;
   margin-top: 1rem;
   font-weight: normal;
@@ -240,7 +242,7 @@
   text-align: center;
   position: relative;
   height: 600px;
-  background: #BB3A3A;
+  background: #bb3a3a;
 }
 
 .page-home .contact-section h1 {
@@ -248,7 +250,9 @@
   text-align: center;
 }
 
-.page-home .contact-section h1, .page-home .contact-section p, .page-home .contact-section a {
+.page-home .contact-section h1,
+.page-home .contact-section p,
+.page-home .contact-section a {
   color: white;
 }
 
