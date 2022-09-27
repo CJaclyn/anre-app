@@ -184,6 +184,10 @@
     border-right: solid 1px rgb(219, 219, 219);
   }
 
+  .address-bottom {
+    display: block;
+  }
+
   @media only screen and (min-width: 500px) {
     .card {
       width: 400px;

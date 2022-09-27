@@ -223,6 +223,7 @@ export default function Properties({ listingData }) {
               sqft,
               address,
               city,
+              zipcode,
               price,
               status,
               thumbnail,
@@ -244,7 +245,10 @@ export default function Properties({ listingData }) {
                       <div className='property-top'>
                         <p className='price'>${price.toLocaleString()}</p>
                         <p className='address'>
-                          {address}, {city}
+                          {address}
+                          <span className='address-bottom'>
+                            {city}, MN {zipcode}
+                          </span>
                         </p>
                       </div>
                       <div className='property-bottom'>
