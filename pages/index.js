@@ -6,12 +6,10 @@ import Slider from 'react-slick';
 import { HeaderImages } from '../HeaderImages';
 import { fetchAPI } from '../lib/api';
 import PageHead from '../components/PageHead';
+import { getAbout } from '../functions.js';
 
 export default function Home({ listingData, aboutData }) {
-  const listings = listingData['data'];
-  var listing = [];
   const data = HeaderImages;
-  var about;
   const settings = {
     dots: false,
     infinite: true,
@@ -25,39 +23,42 @@ export default function Home({ listingData, aboutData }) {
     pauseOnHover: false,
   };
 
-  if (aboutData['data'] == null) {
-    about = 'There was an error. Please check back later';
-  } else {
-    about = aboutData['data'].attributes.content;
-  }
+  function getListings() {
+    const listings = listingData['data'];
+    let listing = [];
 
-  if (listings !== null && listings.length >= 2) {
-    var listingCount = listings.length;
-    listing.push(listings[listingCount - 1].attributes);
-    listing.push(listings[listingCount - 2].attributes);
-  } else if (listings !== null && listings.length == 1) {
-    listing.push(listings[0].attributes);
-  } else {
-    listing = [
-      {
-        slug: '',
-        type: 'N/A',
-        bed: 0,
-        bath: 0,
-        city: 'N/A',
-        address: 'N/A',
-        price: 0,
-        sqft: 0,
-        description: 'There was an error, please check back later',
-      },
-    ];
+    if (listings !== null) {
+      if (listings.length >= 2) {
+        let listingCount = listings.length;
+        listing.push(listings[listingCount - 1].attributes);
+        listing.push(listings[listingCount - 2].attributes);
+      } else {
+        listing.push(listings[0].attributes);
+      }
+    } else {
+      listing = [
+        {
+          slug: '',
+          type: 'N/A',
+          bed: 0,
+          bath: 0,
+          city: 'N/A',
+          address: 'N/A',
+          price: 0,
+          sqft: 0,
+          description: 'There was an error, please check back later',
+        },
+      ];
+    }
+
+    return listing;
   }
 
   return (
     <div className='page-home'>
       <PageHead
         title='Andy Nguyen Real Estate | Realtor in Minnesota'
-        description='Find your new home today! Buy or sell a home with Andy Nguyen Real Estate in Minnesota.'
+        description='Andy Nguyen is a real estate agent in the Twin Cities and Greater Minnesota. Whether you&lsquo;re looking to buy or sell a home in Minnesota, you can trust Andy Nguyen Real Estate to handle everything with integrity and professionalism.'
       />
       <header>
         <div className='background'>
@@ -120,7 +121,7 @@ export default function Home({ listingData, aboutData }) {
               <div className='header'>
                 <h1>Meet Andy</h1>
               </div>
-              <p>{about.substring(0, 200)}...</p>
+              <p>{getAbout(aboutData['data'])}</p>
               <Link href='/about'>
                 <a className='button'>Learn more</a>
               </Link>
@@ -130,7 +131,7 @@ export default function Home({ listingData, aboutData }) {
 
         <section className='recent-listings' data-aos='fade-in'>
           <h1>Recent Listings</h1>
-          {listing.map(
+          {getListings().map(
             (
               {
                 slug,

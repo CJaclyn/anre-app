@@ -7,11 +7,11 @@ import PageHead from '../../components/PageHead';
 export default function Property({ listingData, listingImages }) {
   const listing = listingData['data'][0].attributes;
 
-  if (listing.image.data !== null) {
-    const images = listingImages['data'][0].attributes.photos['data'];
-    var slideshow = [];
+  function getImages() {
+    if (listing.image.data !== null) {
+      const images = listingImages['data'][0].attributes.photos['data'];
+      let slideshow = [];
 
-    function getImages() {
       for (let i in images) {
         const image = images[i].attributes.url;
         slideshow[i] = {
@@ -19,27 +19,26 @@ export default function Property({ listingData, listingImages }) {
           thumbnail: image,
         };
       }
-    }
 
-    function getThumbnail() {
+      (function getThumbnail() {
+        const thumbnail = listing.thumbnail.data.attributes.url;
+        slideshow.unshift({
+          original: thumbnail,
+          thumbnail: thumbnail,
+        });
+      })();
+    } else {
+      var slideshow = [];
       const thumbnail = listing.thumbnail.data.attributes.url;
-      slideshow.unshift({
-        original: thumbnail,
-        thumbnail: thumbnail,
-      });
+      slideshow = [
+        {
+          original: thumbnail,
+          thumbnail: thumbnail,
+        },
+      ];
     }
 
-    getImages();
-    getThumbnail();
-  } else {
-    var slideshow = [];
-    const thumbnail = listing.thumbnail.data.attributes.url;
-    slideshow = [
-      {
-        original: thumbnail,
-        thumbnail: thumbnail,
-      },
-    ];
+    return slideshow;
   }
 
   return (
@@ -50,7 +49,7 @@ export default function Property({ listingData, listingImages }) {
       />
       <main>
         <header className='property-images'>
-          <ImageGallery items={slideshow} />
+          <ImageGallery items={getImages()} />
         </header>
         <div className='main-container'>
           <div className='property-information'>
@@ -140,13 +139,9 @@ export async function getStaticPaths() {
   const listings = listingData['data'];
   const listing = [];
 
-  function getListings() {
-    for (let i in listings) {
-      listing.push(listings[i].attributes);
-    }
+  for (let i in listings) {
+    listing.push(listings[i].attributes);
   }
-
-  getListings();
 
   return {
     paths: listing.map(({ slug }) => ({

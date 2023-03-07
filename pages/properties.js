@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Icon } from '@iconify/react';
 import { fetchAPI } from '../lib/api';
+import { replaceChar } from '../functions.js';
 
 export default function Properties({ listingData }) {
   const [filters, setFilters] = useState({
@@ -13,23 +14,19 @@ export default function Properties({ listingData }) {
     type: 'Any',
     bedroom: '1',
   });
-  const listings = listingData['data'];
   let listingsArr = [];
-  let citiesArr = [];
-  let result = listingsArr;
 
-  function replaceChar(str, index, chr) {
-    str = str.substring(0, index) + chr + str.substring(index + 1, str.length);
-    return str;
-  }
+  (function getListings() {
+    const listings = listingData['data'];
 
-  function getListings() {
     for (let listing of listings) {
       listingsArr.push(listing.attributes);
     }
-  }
+  })();
 
   function getCities() {
+    let citiesArr = [];
+
     for (let listing of listingsArr) {
       let city = listing.city.toLowerCase();
       const firstLetter = city[0].toUpperCase();
@@ -39,13 +36,9 @@ export default function Properties({ listingData }) {
       city = replaceChar(city, indexAfterSpace, letterAfterSpace);
       citiesArr.push(city);
     }
+
+    return [...new Set(citiesArr)];
   }
-
-  getListings();
-  getCities();
-
-  //remove duplicates in city array
-  const city = [...new Set(citiesArr)];
 
   //set filter values
   const handleChange = (e) => {
@@ -56,39 +49,37 @@ export default function Properties({ listingData }) {
     });
   };
 
-  function filtering() {
+  (function filtering() {
     if (filters.status && filters.status != 'All') {
       const status = filters.status;
-      result = result.filter((listing) => listing.status === status);
+      listingsArr = listingsArr.filter((listing) => listing.status === status);
     }
 
     if (filters.city && filters.city != 'Any') {
       const city = filters.city;
 
-      result = result.filter(
+      listingsArr = listingsArr.filter(
         (listing) => listing.city.toUpperCase() === city.toUpperCase()
       );
     }
 
     if (filters.price) {
       const price = filters.price;
-      result = result.filter((listing) => listing.price <= price);
+      listingsArr = listingsArr.filter((listing) => listing.price <= price);
     }
 
     if (filters.type && filters.type != 'Any') {
       const type = filters.type;
-      result = result.filter((listing) => listing.type === type);
+      listingsArr = listingsArr.filter((listing) => listing.type === type);
     }
 
     if (filters.bedroom) {
       const bed = filters.bedroom;
-      result = result.filter((listing) => listing.bed >= bed);
+      listingsArr = listingsArr.filter((listing) => listing.bed >= bed);
     }
 
-    return result;
-  }
-
-  filtering();
+    return listingsArr;
+  })();
 
   function resetFilters() {
     setFilters({
@@ -99,7 +90,7 @@ export default function Properties({ listingData }) {
       bedroom: '1',
     });
 
-    return result;
+    return listingsArr;
   }
 
   return (
@@ -138,7 +129,7 @@ export default function Properties({ listingData }) {
               value={filters.city}
               aria-label='Filter property city'
             >
-              {city.map((city, index) => (
+              {getCities().map((city, index) => (
                 <option value={city} key={index}>
                   {city}
                 </option>
@@ -206,8 +197,8 @@ export default function Properties({ listingData }) {
         </form>
       </div>
       <main>
-        <p className='results-count'>{result.length} Results</p>
-        {result.length === 0 ? (
+        <p className='results-count'>{listingsArr.length} Results</p>
+        {listingsArr.length === 0 ? (
           <div>
             <p>
               No matching results. Change or reset the filters to see more
@@ -215,7 +206,7 @@ export default function Properties({ listingData }) {
             </p>
           </div>
         ) : (
-          result.map(
+          listingsArr.map(
             ({
               slug,
               bed,
